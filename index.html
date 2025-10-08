@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Automatiza tu negocio con soluciones tecnológicas avanzadas. Especialistas en automatización de procesos, integración de IA y consultoría estratégica.">
-    <title>TechFlow | Automatización e Innovación para tu Empresa</title>
+    <meta name="description" content="Emporium AI: Soluciones innovadoras de automatización con modelos de precios flexibles. Implementamos IA para transformar tu negocio con opciones de pago híbrido o único.">
+    <meta name="keywords" content="automatización, inteligencia artificial, IA empresarial, automatización de procesos, consultoría tecnológica, soluciones de IA, Emporium AI">
+    <meta name="author" content="Emporium AI">
+    <meta property="og:title" content="Emporium AI | Automatización Inteligente con Modelos de Precio Flexibles">
+    <meta property="og:description" content="Transformamos tu negocio con soluciones de automatización e IA. Elige entre nuestro modelo híbrido (pago inicial + suscripción) o pago único sin mantenimiento.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://emporium-ai.netlify.app">
+    <title>Emporium AI | Automatización Inteligente con Modelos de Precio Flexibles</title>
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
@@ -14,10 +20,10 @@
     <style>
         /* Variables CSS */
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #0f172a;
-            --accent: #38bdf8;
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #1e293b;
+            --accent: #8b5cf6;
             --light: #f8fafc;
             --gray: #94a3b8;
             --dark-gray: #64748b;
@@ -115,13 +121,13 @@
         .btn-primary {
             background: var(--primary);
             color: white;
-            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
         }
 
         .btn-primary:hover {
             background: var(--primary-dark);
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
         }
 
         .btn-outline {
@@ -221,7 +227,7 @@
         /* Hero Section */
         .hero {
             padding: 10rem 0 6rem;
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            background: linear-gradient(135deg, #f0f7ff 0%, #eef4ff 100%);
             position: relative;
             overflow: hidden;
         }
@@ -285,6 +291,8 @@
             box-shadow: var(--shadow);
             transition: var(--transition);
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
         .service-card:hover {
@@ -295,7 +303,7 @@
         .service-icon {
             width: 80px;
             height: 80px;
-            background: rgba(37, 99, 235, 0.1);
+            background: rgba(99, 102, 241, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -308,6 +316,38 @@
         .service-card h3 {
             margin-bottom: 1rem;
             font-size: 1.5rem;
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: var(--accent);
+            color: white;
+            padding: 5px 25px;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .pricing-details {
+            background: rgba(99, 102, 241, 0.05);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            margin-top: 1.5rem;
+            text-align: left;
+        }
+
+        .pricing-option {
+            display: flex;
+            margin-bottom: 1rem;
+            align-items: flex-start;
+        }
+
+        .pricing-option i {
+            color: var(--success);
+            margin-right: 10px;
+            margin-top: 5px;
         }
 
         /* Sobre Nosotros */
@@ -345,7 +385,7 @@
 
         /* Casos de Éxito */
         .testimonials {
-            background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
+            background: linear-gradient(135deg, #eef4ff 0%, #f0f7ff 100%);
         }
 
         .testimonial-grid {
@@ -457,7 +497,7 @@
         .contact-icon {
             width: 60px;
             height: 60px;
-            background: rgba(37, 99, 235, 0.1);
+            background: rgba(99, 102, 241, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -496,7 +536,7 @@
         .form-control:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
         }
 
         textarea.form-control {
@@ -670,8 +710,8 @@
     <header>
         <nav class="navbar">
             <a href="#" class="logo">
-                <i class="fas fa-bolt"></i>
-                TechFlow
+                <i class="fas fa-brain"></i>
+                Emporium AI
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#inicio">Inicio</a></li>
@@ -692,11 +732,11 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Automatiza tu Empresa con Soluciones Tecnológicas Avanzadas</h1>
-                    <p>Transformamos tu negocio con automatización inteligente, integración de IA y consultoría estratégica para optimizar procesos, reducir costos y aumentar la productividad.</p>
+                    <h1>Automatización Inteligente con Modelos de Precio Flexibles</h1>
+                    <p>En Emporium AI, una empresa innovadora recién lanzada, transformamos tu negocio con soluciones de automatización e IA diseñadas para tu presupuesto. Elige entre nuestro modelo híbrido o pago único sin compromisos.</p>
                     <div class="hero-btns">
-                        <a href="#servicios" class="btn btn-primary">Nuestros Servicios</a>
-                        <a href="#contacto" class="btn btn-outline">Contáctanos</a>
+                        <a href="#servicios" class="btn btn-primary">Descubre Nuestros Modelos de Precio</a>
+                        <a href="#contacto" class="btn btn-outline">Agenda una Consulta Gratuita</a>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -713,29 +753,92 @@
         <div class="container">
             <div class="section-title">
                 <h2>Nuestros Servicios</h2>
-                <p>Soluciones tecnológicas personalizadas para impulsar tu negocio</p>
+                <p>Soluciones de automatización e IA diseñadas para empresas modernas con opciones de pago flexibles</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
+                    <div class="pricing-badge">MODELO HÍBRIDO</div>
                     <div class="service-icon">
                         <i class="fas fa-cogs"></i>
                     </div>
                     <h3>Automatización de Procesos</h3>
-                    <p>Implementamos soluciones de automatización que eliminan tareas repetitivas, reducen errores humanos y optimizan flujos de trabajo en todos los departamentos de tu empresa.</p>
+                    <p>Implementamos soluciones que eliminan tareas repetitivas y optimizan flujos de trabajo en todos los departamentos de tu empresa.</p>
+                    <div class="pricing-details">
+                        <div class="pricing-option">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Pago inicial:</strong> Desarrollo e implementación del sistema
+                            </div>
+                        </div>
+                        <div class="pricing-option">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Suscripción mensual:</strong> Mantenimiento, actualizaciones y soporte técnico
+                            </div>
+                        </div>
+                        <div class="pricing-option">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Beneficio:</strong> Siempre con la última tecnología y sin costos imprevistos
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="service-card">
+                    <div class="pricing-badge">PAGO ÚNICO</div>
                     <div class="service-icon">
                         <i class="fas fa-brain"></i>
                     </div>
                     <h3>Integración de IA</h3>
-                    <p>Desarrollamos sistemas inteligentes que aprenden de tus datos para predecir tendencias, personalizar experiencias y tomar decisiones basadas en información en tiempo real.</p>
+                    <p>Desarrollamos sistemas inteligentes que aprenden de tus datos para predecir tendencias y tomar decisiones basadas en información en tiempo real.</p>
+                    <div class="pricing-details">
+                        <div class="pricing-option">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Pago único:</strong> Desarrollo completo del sistema de IA
+                            </div>
+                        </div>
+                        <div class="pricing-option">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Sin suscripción:</strong> Propiedad total del sistema
+                            </div>
+                        </div>
+                        <div class="pricing-option">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Soporte básico:</strong> 3 meses incluidos, luego opcional
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="service-card">
+                    <div class="pricing-badge">FLEXIBLE</div>
                     <div class="service-icon">
                         <i class="fas fa-lightbulb"></i>
                     </div>
                     <h3>Consultoría Estratégica</h3>
-                    <p>Nuestros expertos analizan tus procesos actuales y diseñan una hoja de ruta tecnológica para maximizar la eficiencia y preparar tu empresa para el futuro digital.</p>
+                    <p>Nuestros expertos analizan tus procesos y diseñan una hoja de ruta tecnológica para maximizar la eficiencia y preparar tu empresa para el futuro digital.</p>
+                    <div class="pricing-details">
+                        <div class="pricing-option">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Por proyecto:</strong> Análisis completo y plan de acción
+                            </div>
+                        </div>
+                        <div class="pricing-option">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Por horas:</strong> Asesoría puntual según necesidades
+                            </div>
+                        </div>
+                        <div class="pricing-option">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Retainer mensual:</strong> Soporte continuo para decisiones estratégicas
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -746,30 +849,30 @@
         <div class="container">
             <div class="section-title">
                 <h2>Sobre Nosotros</h2>
-                <p>Más de 10 años impulsando la transformación digital de empresas</p>
+                <p>Una nueva generación de soluciones tecnológicas para empresas innovadoras</p>
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p>En TechFlow, creemos que la tecnología debe servir para liberar el potencial humano, no para reemplazarlo. Fundada en 2013, hemos ayudado a más de 500 empresas a optimizar sus operaciones mediante soluciones de automatización inteligente.</p>
-                    <p>Nuestro equipo multidisciplinario combina expertos en ingeniería de software, ciencia de datos, diseño de experiencia de usuario y consultoría empresarial para ofrecer soluciones integrales que realmente transforman negocios.</p>
-                    <p>Trabajamos con metodologías ágiles y enfoque centrado en el cliente, asegurando que cada solución se adapte perfectamente a tus necesidades específicas y objetivos estratégicos.</p>
+                    <p>En Emporium AI, somos una empresa recién lanzada con una misión clara: democratizar el acceso a la automatización e inteligencia artificial para empresas de todos los tamaños. Creemos que la tecnología debe ser accesible, transparente y adaptada a las necesidades reales de cada negocio.</p>
+                    <p>Nuestro equipo está formado por expertos apasionados por la innovación que han trabajado en proyectos de vanguardia en Silicon Valley y Europa. Nos unimos para crear una alternativa fresca y flexible a los modelos tradicionales de consultoría tecnológica.</p>
+                    <p>No somos una empresa más del sector: somos un colectivo de visionarios que quiere marcar la diferencia ofreciendo soluciones prácticas con modelos de precios que se adaptan a tu realidad financiera.</p>
                 </div>
                 <div class="about-stats">
                     <div class="stat-card">
-                        <div class="stat-number">500+</div>
-                        <p>Clientes satisfechos</p>
+                        <div class="stat-number">100%</div>
+                        <p>Enfoque en resultados</p>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">98%</div>
-                        <p>Tasa de éxito en proyectos</p>
+                        <div class="stat-number">24h</div>
+                        <p>Respuesta a consultas</p>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">40%</div>
-                        <p>Reducción promedio de costos operativos</p>
+                        <div class="stat-number">Flexible</div>
+                        <p>Modelos de pago</p>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">24/7</div>
-                        <p>Soporte técnico especializado</p>
+                        <div class="stat-number">Startup</div>
+                        <p>Mentalidad ágil</p>
                     </div>
                 </div>
             </div>
@@ -781,42 +884,42 @@
         <div class="container">
             <div class="section-title">
                 <h2>Casos de Éxito</h2>
-                <p>Historias reales de transformación digital</p>
+                <p>Historias reales de empresas que ya confían en Emporium AI</p>
             </div>
             <div class="testimonial-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>"La implementación del sistema de automatización de TechFlow redujo nuestros tiempos de procesamiento en un 70% y eliminó completamente los errores manuales en nuestra cadena de suministro."</p>
+                        <p>"Como startup en crecimiento, necesitábamos automatizar sin comprometer nuestro flujo de caja. El modelo híbrido de Emporium AI fue perfecto: pagamos un desarrollo inicial razonable y luego una suscripción ajustada a nuestro presupuesto."</p>
                     </div>
                     <div class="client-info">
                         <div class="client-avatar">MJ</div>
                         <div class="client-details">
                             <h4>María Jiménez</h4>
-                            <p>Directora de Operaciones, LogiCorp</p>
+                            <p>CEO, TechStart</p>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>"Gracias a la integración de IA en nuestro servicio al cliente, hemos aumentado la satisfacción del cliente en un 45% mientras reducimos los costos operativos en un 30%."</p>
+                        <p>"Como empresa familiar con décadas de historia, queríamos modernizarnos sin depender de proveedores externos a largo plazo. El modelo de pago único de Emporium AI nos dio la independencia tecnológica que buscábamos."</p>
                     </div>
                     <div class="client-info">
                         <div class="client-avatar">CR</div>
                         <div class="client-details">
                             <h4>Carlos Rodríguez</h4>
-                            <p>CEO, ServiTech</p>
+                            <p>Director, Industrias Rodríguez</p>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>"La consultoría estratégica de TechFlow nos ayudó a identificar oportunidades de automatización que ni siquiera sabíamos que existían. Hoy somos 3 veces más eficientes que hace dos años."</p>
+                        <p>"La consultoría estratégica de Emporium AI nos ayudó a priorizar nuestras inversiones en tecnología. Su enfoque práctico y sin tecnicismos innecesarios fue exactamente lo que necesitábamos como empresa no tecnológica."</p>
                     </div>
                     <div class="client-info">
                         <div class="client-avatar">AL</div>
                         <div class="client-details">
                             <h4>Ana López</h4>
-                            <p>Gerente General, Innovatech</p>
+                            <p>Gerente General, Retail Solutions</p>
                         </div>
                     </div>
                 </div>
@@ -829,34 +932,34 @@
         <div class="container">
             <div class="section-title">
                 <h2>Blog y Recursos</h2>
-                <p>Consejos, tendencias y casos de estudio sobre automatización</p>
+                <p>Consejos, tendencias y análisis sobre automatización e IA para empresas</p>
             </div>
             <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 15 Oct 2025</span>
+                            <span><i class="far fa-user"></i> Equipo Emporium AI</span>
+                        </div>
+                        <h3>Modelos de Precio en Automatización: ¿Híbrido o Pago Único?</h3>
+                        <p>Guía para elegir el modelo de pago que mejor se adapta a tu empresa y presupuesto.</p>
+                        <a href="#" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.9rem;">Leer más</a>
+                    </div>
+                </div>
                 <div class="blog-card">
                     <div class="blog-image">
                         <i class="fas fa-robot"></i>
                     </div>
                     <div class="blog-content">
                         <div class="blog-meta">
-                            <span><i class="far fa-calendar"></i> 15 Jun 2023</span>
-                            <span><i class="far fa-user"></i> Equipo TechFlow</span>
-                        </div>
-                        <h3>5 Señales de que tu empresa necesita automatización</h3>
-                        <p>Aprende a identificar cuándo los procesos manuales están frenando el crecimiento de tu negocio.</p>
-                        <a href="#" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.9rem;">Leer más</a>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="far fa-calendar"></i> 28 May 2023</span>
+                            <span><i class="far fa-calendar"></i> 28 Sep 2025</span>
                             <span><i class="far fa-user"></i> Dra. Elena Martínez</span>
                         </div>
-                        <h3>Cómo la IA está transformando la atención al cliente</h3>
-                        <p>Descubre cómo los asistentes virtuales inteligentes están revolucionando la experiencia del cliente.</p>
+                        <h3>5 Señales de que tu Empresa Necesita Automatización YA</h3>
+                        <p>Aprende a identificar cuándo los procesos manuales están frenando tu crecimiento.</p>
                         <a href="#" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.9rem;">Leer más</a>
                     </div>
                 </div>
@@ -866,11 +969,11 @@
                     </div>
                     <div class="blog-content">
                         <div class="blog-meta">
-                            <span><i class="far fa-calendar"></i> 10 Abr 2023</span>
+                            <span><i class="far fa-calendar"></i> 10 Ago 2025</span>
                             <span><i class="far fa-user"></i> Carlos Sánchez</span>
                         </div>
-                        <h3>ROI de la automatización: Cómo medir el retorno de tu inversión</h3>
-                        <p>Guía práctica para calcular y maximizar el retorno de tus proyectos de automatización.</p>
+                        <h3>ROI de la Automatización: Cómo Medir el Retorno de tu Inversión</h3>
+                        <p>Métodos prácticos para calcular y maximizar el retorno de tus proyectos de automatización.</p>
                         <a href="#" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.9rem;">Leer más</a>
                     </div>
                 </div>
@@ -883,7 +986,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Contáctanos</h2>
-                <p>¿Listo para transformar tu negocio? Escríbenos y uno de nuestros expertos te contactará</p>
+                <p>¿Listo para transformar tu negocio con soluciones de automatización e IA? Escríbenos y uno de nuestros expertos te contactará para una consulta gratuita.</p>
             </div>
             <div class="contact-container">
                 <div class="contact-info">
@@ -893,7 +996,7 @@
                         </div>
                         <div>
                             <h3>Dirección</h3>
-                            <p>Av. Innovación 123, Distrito Tecnológico<br>Madrid, España</p>
+                            <p>Calle Innovación 42, Distrito Tecnológico<br>Madrid, España</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -911,7 +1014,7 @@
                         </div>
                         <div>
                             <h3>Email</h3>
-                            <p>info@techflow.es</p>
+                            <p>hola@emporium-ai.com</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -939,18 +1042,18 @@
                             <input type="tel" id="phone" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="service">Servicio de Interés</label>
-                            <select id="service" class="form-control">
-                                <option value="">Selecciona un servicio</option>
-                                <option value="automatizacion">Automatización de Procesos</option>
-                                <option value="ia">Integración de IA</option>
+                            <label for="service">Modelo de Interés</label>
+                            <select id="service" class="form-control" required>
+                                <option value="">Selecciona un modelo</option>
+                                <option value="hibrido">Modelo Híbrido (Pago + Suscripción)</option>
+                                <option value="unico">Pago Único sin Mantenimiento</option>
                                 <option value="consultoria">Consultoría Estratégica</option>
                                 <option value="otros">Otros</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="message">Mensaje</label>
-                            <textarea id="message" class="form-control" required></textarea>
+                            <textarea id="message" class="form-control" placeholder="Cuéntanos sobre tu empresa y tus necesidades..." required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Mensaje</button>
                     </form>
@@ -965,10 +1068,10 @@
             <div class="footer-content">
                 <div class="footer-about">
                     <div class="footer-logo">
-                        <i class="fas fa-bolt"></i>
-                        TechFlow
+                        <i class="fas fa-brain"></i>
+                        Emporium AI
                     </div>
-                    <p>Soluciones de automatización e inteligencia artificial para empresas que buscan innovar y crecer en la era digital.</p>
+                    <p>Soluciones de automatización e inteligencia artificial con modelos de precio flexibles para empresas que buscan innovar sin comprometer su flujo de caja.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -993,95 +1096,10 @@
                         <li><a href="#casos">Casos de Éxito</a></li>
                         <li><a href="#blog">Blog</a></li>
                         <li><a href="#">Carreras</a></li>
-                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h3>Recursos</h3>
                     <ul>
                         <li><a href="#">Guías y eBooks</a></li>
-                        <li><a href="#">Webinars</a></li>
-                        <li><a href="#">Documentación Técnica</a></li>
-                        <li><a href="#">Preguntas Frecuentes</a></li>
-                        <li><a href="#">Soporte</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2023 TechFlow. Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile Navigation Toggle
-        const mobileToggle = document.getElementById('mobileToggle');
-        const navLinks = document.getElementById('navLinks');
-        
-        mobileToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileToggle.innerHTML = navLinks.classList.contains('active') ? 
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        });
-        
-        // Form submission
-        const contactForm = document.getElementById('contactForm');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Get form values
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                
-                // Simple validation
-                if (name && email) {
-                    // In a real implementation, you would send this to a server
-                    alert('¡Gracias por contactarnos! Hemos recibido tu mensaje y nos pondremos en contacto contigo pronto.');
-                    contactForm.reset();
-                } else {
-                    alert('Por favor completa todos los campos obligatorios.');
-                }
-            });
-        }
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-            } else {
-                header.style.boxShadow = 'var(--shadow)';
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-            }
-        });
-    </script>
-</body>
-</html>
