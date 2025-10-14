@@ -1,16 +1,17 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Emporium AI: Soluciones innovadoras de automatización con modelos de precios flexibles. Implementamos IA para transformar tu negocio con opciones de pago híbrido o único.">
-    <meta name="keywords" content="automatización, inteligencia artificial, IA empresarial, automatización de procesos, consultoría tecnológica, soluciones de IA, Emporium AI">
+    <meta name="description" content="Implementamos asistentes de IA que agendan, atienden y venden por ti. Cumplimos GDPR y medimos el ROI. Reserva una demo en 20 minutos.">
+    <meta name="keywords" content="automatización IA, agencia IA B2B, automatización de reservas, atención al cliente IA, captación de leads IA, Emporium AI, GDPR, IA para empresas">
     <meta name="author" content="Emporium AI">
-    <meta property="og:title" content="Emporium AI | Automatización Inteligente con Modelos de Precio Flexibles">
-    <meta property="og:description" content="Transformamos tu negocio con soluciones de automatización e IA. Elige entre nuestro modelo híbrido (pago inicial + suscripción) o pago único sin mantenimiento.">
+    <meta property="og:title" content="Agencia de IA B2B para Automatizaciones | Emporium AI">
+    <meta property="og:description" content="Implementamos asistentes de IA que agendan, atienden y venden por ti. Cumplimos GDPR y medimos el ROI. Reserva una demo en 20 minutos.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://emporium-ai.netlify.app">
-    <title>Emporium AI | Automatización Inteligente con Modelos de Precio Flexibles</title>
+    <meta property="og:image" content="https://emporium-ai.netlify.app/images/og-image.jpg">
+    <title>Agencia de IA B2B para Automatizaciones | Emporium AI</title>
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
     <!-- Google Fonts -->
@@ -277,6 +278,252 @@
             gap: 1rem;
         }
 
+        /* Pruebas sociales */
+        .social-proof {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .proof-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .proof-stat {
+            text-align: center;
+        }
+
+        .proof-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .proof-label {
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+        }
+
+        /* Qué automatizamos */
+        .what-we-automate {
+            margin-top: 4rem;
+        }
+
+        .automate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .automate-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .automate-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .automate-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* Casos de uso por rol */
+        .use-cases {
+            margin-top: 4rem;
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .use-case-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .use-case-role {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .use-case-role i {
+            color: var(--primary);
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .use-case-role h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+
+        /* Caso de éxito destacado */
+        .featured-case {
+            margin-top: 4rem;
+            background: linear-gradient(135deg, #eef4ff 0%, #f0f7ff 100%);
+            padding: 4rem 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .case-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .case-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .case-details {
+            flex: 1;
+        }
+
+        .case-stats {
+            display: flex;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .case-stat {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            text-align: center;
+        }
+
+        .case-stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .case-stat-label {
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+        }
+
+        /* Integraciones y compliance */
+        .integrations-compliance {
+            margin-top: 4rem;
+        }
+
+        .compliance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .compliance-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .compliance-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .compliance-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* CTA final */
+        .final-cta {
+            margin-top: 4rem;
+            text-align: center;
+            padding: 4rem 2rem;
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .final-cta h2 {
+            margin-bottom: 1rem;
+        }
+
+        .final-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--dark-gray);
+        }
+
+        .final-cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        /* FAQ */
+        .faq-section {
+            margin-top: 4rem;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .faq-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .faq-answer {
+            color: var(--dark-gray);
+        }
+
         /* Servicios */
         .services-grid {
             display: grid;
@@ -318,19 +565,35 @@
             font-size: 1.5rem;
         }
 
-        .pricing-badge {
-            position: absolute;
-            top: 20px;
-            right: -30px;
-            background: var(--accent);
-            color: white;
-            padding: 5px 25px;
-            transform: rotate(45deg);
-            font-size: 0.8rem;
-            font-weight: 600;
+        .service-steps {
+            margin-top: 1.5rem;
+            text-align: left;
         }
 
-        .pricing-details {
+        .service-step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .service-step-number {
+            background: var(--primary);
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            margin-right: 10px;
+        }
+
+        .service-step-content {
+            flex: 1;
+        }
+
+        .service-impact {
             background: rgba(99, 102, 241, 0.05);
             padding: 1.5rem;
             border-radius: var(--radius);
@@ -338,16 +601,67 @@
             text-align: left;
         }
 
-        .pricing-option {
-            display: flex;
+        .service-impact h4 {
             margin-bottom: 1rem;
-            align-items: flex-start;
+            color: var(--secondary);
         }
 
-        .pricing-option i {
+        /* Sectores */
+        .sectors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .sector-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .sector-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .sector-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        .sector-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .sector-kpis {
+            background: rgba(99, 102, 241, 0.05);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            margin-top: 1.5rem;
+            text-align: left;
+        }
+
+        .sector-kpi {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .sector-kpi i {
             color: var(--success);
             margin-right: 10px;
-            margin-top: 5px;
         }
 
         /* Sobre Nosotros */
@@ -626,6 +940,47 @@
             font-size: 0.9rem;
         }
 
+        /* Barra sticky inferior (móvil) */
+        .sticky-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 1000;
+            display: none;
+        }
+
+        .sticky-bar a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-size: 0.9rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .sticky-bar .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .sticky-bar .btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
         /* Responsive */
         @media (max-width: 992px) {
             h1 {
@@ -647,6 +1002,14 @@
             
             .about-content {
                 flex-direction: column;
+            }
+            
+            .case-content {
+                flex-direction: column;
+            }
+            
+            .sticky-bar {
+                display: flex;
             }
         }
 
@@ -702,6 +1065,15 @@
             .btn {
                 width: 100%;
             }
+            
+            .proof-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .final-cta-buttons {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -715,11 +1087,13 @@
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#nosotros">Sobre Nosotros</a></li>
+                <li><a href="#soluciones">Soluciones</a></li>
+                <li><a href="#sectores">Sectores</a></li>
                 <li><a href="#casos">Casos de Éxito</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contacto" class="btn btn-outline">Contacto</a></li>
+                <li><a href="#precios">Precios</a></li>
+                <li><a href="#recursos">Recursos</a></li>
+                <li><a href="#nosotros">Sobre Nosotros</a></li>
+                <li><a href="#contacto" class="btn btn-primary">Reservar Demo</a></li>
             </ul>
             <div class="mobile-toggle" id="mobileToggle">
                 <i class="fas fa-bars"></i>
@@ -732,11 +1106,11 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Automatización Inteligente con Modelos de Precio Flexibles</h1>
-                    <p>En Emporium AI, una empresa innovadora recién lanzada, transformamos tu negocio con soluciones de automatización e IA diseñadas para tu presupuesto. Elige entre nuestro modelo híbrido o pago único sin compromisos.</p>
+                    <h1>IA que agenda, atiende y vende por ti</h1>
+                    <p>Implementamos asistentes conectados a tu CRM para convertir más y gastar menos. Cumplimos GDPR, alojamos en la UE y medimos cada interacción.</p>
                     <div class="hero-btns">
-                        <a href="#servicios" class="btn btn-primary">Descubre Nuestros Modelos de Precio</a>
-                        <a href="#contacto" class="btn btn-outline">Agenda una Consulta Gratuita</a>
+                        <a href="#contacto" class="btn btn-primary">Reservar demo de 20 minutos</a>
+                        <a href="#casos" class="btn btn-outline">Ver casos de éxito</a>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -745,99 +1119,582 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- Pruebas sociales -->
+            <div class="social-proof">
+                <div class="proof-stats">
+                    <div class="proof-stat">
+                        <div class="proof-number">50+</div>
+                        <div class="proof-label">Empresas satisfechas</div>
+                    </div>
+                    <div class="proof-stat">
+                        <div class="proof-number">98%</div>
+                        <div class="proof-label">Tasa de éxito en proyectos</div>
+                    </div>
+                    <div class="proof-stat">
+                        <div class="proof-number">40%</div>
+                        <div class="proof-label">Reducción promedio de costes operativos</div>
+                    </div>
+                    <div class="proof-stat">
+                        <div class="proof-number">GDPR</div>
+                        <div class="proof-label">Cumplimiento garantizado</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Servicios -->
-    <section class="section" id="servicios">
+    <!-- Qué automatizamos -->
+    <section class="section what-we-automate">
         <div class="container">
             <div class="section-title">
-                <h2>Nuestros Servicios</h2>
-                <p>Soluciones de automatización e IA diseñadas para empresas modernas con opciones de pago flexibles</p>
+                <h2>Qué automatizamos</h2>
+                <p>Soluciones de IA aplicadas a tareas repetitivas que generan valor inmediato</p>
+            </div>
+            <div class="automate-grid">
+                <div class="automate-card">
+                    <div class="automate-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Automatización de reservas</h3>
+                    <p>Asistentes que agendan, reprograman y confirman citas vía WhatsApp, email o calendario.</p>
+                </div>
+                <div class="automate-card">
+                    <div class="automate-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Atención al cliente 24/7</h3>
+                    <p>Respuestas inteligentes basadas en tu base de conocimiento + ticketing automático.</p>
+                </div>
+                <div class="automate-card">
+                    <div class="automate-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Captación y cualificación de leads</h3>
+                    <p>Formularios y WhatsApp + scoring + envío a CRM con owner asignado.</p>
+                </div>
+                <div class="automate-card">
+                    <div class="automate-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Back-office y operaciones</h3>
+                    <p>Extracción de datos de PDFs, conciliación, avisos internos, resúmenes automáticos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Casos de uso por rol -->
+    <section class="section use-cases">
+        <div class="container">
+            <div class="section-title">
+                <h2>Casos de uso por rol</h2>
+                <p>Como beneficia a cada departamento de tu empresa</p>
+            </div>
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <div class="use-case-role">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Operaciones</h3>
+                    </div>
+                    <p>Reduce no-shows, optimiza recursos y mejora la trazabilidad de procesos con automatización de reservas y gestión de citas.</p>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-role">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Marketing</h3>
+                    </div>
+                    <p>Convierte más leads con bots de cualificación, personaliza campañas y mide el ROI de cada canal de adquisición.</p>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-role">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Ventas</h3>
+                    </div>
+                    <p>Agenda reuniones automáticamente, sigue leads sin esfuerzo y aumenta el pipeline con calificación inteligente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Caso de éxito destacado -->
+    <section class="section featured-case">
+        <div class="container">
+            <div class="case-content">
+                <div class="case-image">
+                    <div style="background: linear-gradient(45deg, var(--primary), var(--accent)); width: 300px; height: 300px; border-radius: var(--radius); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                        <i class="fas fa-clinic-medical"></i>
+                    </div>
+                </div>
+                <div class="case-details">
+                    <h2>Clínica Dental Estética: Reducción del 32% en costes de soporte</h2>
+                    <p>Implementamos un asistente de IA que gestiona todas las reservas, recordatorios y consultas de pacientes, liberando tiempo para el equipo humano.</p>
+                    <div class="case-stats">
+                        <div class="case-stat">
+                            <div class="case-stat-number">-32%</div>
+                            <div class="case-stat-label">Coste soporte</div>
+                        </div>
+                        <div class="case-stat">
+                            <div class="case-stat-number">+27%</div>
+                            <div class="case-stat-label">Demos cerradas</div>
+                        </div>
+                        <div class="case-stat">
+                            <div class="case-stat-number">98%</div>
+                            <div class="case-stat-label">Satisfacción paciente</div>
+                        </div>
+                    </div>
+                    <div class="client-info">
+                        <div class="client-avatar">MJ</div>
+                        <div class="client-details">
+                            <h4>María Jiménez</h4>
+                            <p>Directora de Operaciones, Clínica Dental Estética</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integraciones y compliance -->
+    <section class="section integrations-compliance">
+        <div class="container">
+            <div class="section-title">
+                <h2>Integraciones y cumplimiento</h2>
+                <p>Trabajamos con tus sistemas actuales y cumplimos con las normativas más estrictas</p>
+            </div>
+            <div class="compliance-grid">
+                <div class="compliance-card">
+                    <div class="compliance-icon">
+                        <i class="fab fa-salesforce"></i>
+                    </div>
+                    <h3>Integraciones</h3>
+                    <p>Conectamos con tu CRM, ERP, WhatsApp Business, email y web para una experiencia fluida.</p>
+                </div>
+                <div class="compliance-card">
+                    <div class="compliance-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Seguridad</h3>
+                    <p>Alojamiento en servidores de la UE, cifrado end-to-end y backups diarios.</p>
+                </div>
+                <div class="compliance-card">
+                    <div class="compliance-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3>GDPR</h3>
+                    <p>Cumplimos con el RGPD europeo y proporcionamos contrato de encargado del tratamiento.</p>
+                </div>
+                <div class="compliance-card">
+                    <div class="compliance-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Métricas</h3>
+                    <p>Medimos cada interacción y te entregamos reportes mensuales con ROI y KPIs clave.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA final -->
+    <section class="section final-cta">
+        <div class="container">
+            <h2>¿Listo para empezar con un piloto de 2 semanas?</h2>
+            <p>Te ofrecemos un diagnóstico gratuito de automatización con plan en 48 horas. Si no ves resultados, no seguimos.</p>
+            <div class="final-cta-buttons">
+                <a href="#contacto" class="btn btn-primary">Reservar demo gratuita</a>
+                <a href="#" class="btn btn-outline">Descargar diagnóstico gratuito</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Preguntas frecuentes</h2>
+                <p>Respuestas a las objeciones más comunes</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <div class="faq-question">¿Cumplen GDPR? ¿Dónde se alojan los datos?</div>
+                    <div class="faq-answer">Sí, cumplimos con el GDPR europeo. Todos nuestros servidores están ubicados en la UE y ofrecemos contrato de encargado del tratamiento bajo solicitud.</div>
+                </div>
+                <div class="faq-card">
+                    <div class="faq-question">¿Qué pasa si mi CRM es X?</div>
+                    <div class="faq-answer">Nos integramos con cualquier CRM mediante APIs o herramientas de automatización como Zapier, Make o n8n. Si no hay integración directa, la desarrollamos.</div>
+                </div>
+                <div class="faq-card">
+                    <div class="faq-question">¿Cuánto tardo en ver resultados?</div>
+                    <div class="faq-answer">En 2 semanas tienes un piloto funcional. Los resultados completos se ven en 30-60 días, dependiendo de la complejidad del proceso.</div>
+                </div>
+                <div class="faq-card">
+                    <div class="faq-question">¿Se puede empezar con un piloto barato?</div>
+                    <div class="faq-answer">¡Claro! Ofrecemos pilotos desde 999€ que incluyen análisis, desarrollo e implementación de un proceso específico. Sin compromisos.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Soluciones -->
+    <section class="section" id="soluciones">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestras Soluciones</h2>
+                <p>Automatizaciones específicas para resolver tus dolores más urgentes</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="pricing-badge">MODELO HÍBRIDO</div>
                     <div class="service-icon">
-                        <i class="fas fa-cogs"></i>
+                        <i class="fas fa-calendar-check"></i>
                     </div>
-                    <h3>Automatización de Procesos</h3>
-                    <p>Implementamos soluciones que eliminan tareas repetitivas y optimizan flujos de trabajo en todos los departamentos de tu empresa.</p>
-                    <div class="pricing-details">
-                        <div class="pricing-option">
-                            <i class="fas fa-check-circle"></i>
-                            <div>
-                                <strong>Pago inicial:</strong> Desarrollo e implementación del sistema
-                            </div>
+                    <h3>Automatización de reservas</h3>
+                    <p>Asistentes que agendan, reprograman y confirman citas vía WhatsApp, email o calendario.</p>
+                    <div class="service-steps">
+                        <div class="service-step">
+                            <div class="service-step-number">1</div>
+                            <div class="service-step-content">Análisis de tu proceso actual y definición de flujos</div>
                         </div>
-                        <div class="pricing-option">
-                            <i class="fas fa-check-circle"></i>
-                            <div>
-                                <strong>Suscripción mensual:</strong> Mantenimiento, actualizaciones y soporte técnico
-                            </div>
+                        <div class="service-step">
+                            <div class="service-step-number">2</div>
+                            <div class="service-step-content">Desarrollo del asistente con tu branding y tono de voz</div>
                         </div>
-                        <div class="pricing-option">
+                        <div class="service-step">
+                            <div class="service-step-number">3</div>
+                            <div class="service-step-content">Integración con tu CRM y pruebas de funcionamiento</div>
+                        </div>
+                    </div>
+                    <div class="service-impact">
+                        <h4>Impacto medible:</h4>
+                        <p>• -32% coste soporte<br>• +27% demos cerradas<br>• 98% satisfacción cliente</p>
+                    </div>
+                    <a href="#contacto" class="btn btn-outline" style="margin-top: 1rem;">Ver demo de esta solución</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Atención al cliente 24/7</h3>
+                    <p>Respuestas inteligentes basadas en tu base de conocimiento + ticketing automático.</p>
+                    <div class="service-steps">
+                        <div class="service-step">
+                            <div class="service-step-number">1</div>
+                            <div class="service-step-content">Importación de tu base de conocimiento y definición de respuestas</div>
+                        </div>
+                        <div class="service-step">
+                            <div class="service-step-number">2</div>
+                            <div class="service-step-content">Configuración de RAG (Retrieval-Augmented Generation)</div>
+                        </div>
+                        <div class="service-step">
+                            <div class="service-step-number">3</div>
+                            <div class="service-step-content">Integración con canales de comunicación y sistema de tickets</div>
+                        </div>
+                    </div>
+                    <div class="service-impact">
+                        <h4>Impacto medible:</h4>
+                        <p>• -40% coste soporte<br>• +50% resolución primera vez<br>• 24/7 disponibilidad</p>
+                    </div>
+                    <a href="#contacto" class="btn btn-outline" style="margin-top: 1rem;">Ver demo de esta solución</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Captación y cualificación de leads</h3>
+                    <p>Formularios y WhatsApp + scoring + envío a CRM con owner asignado.</p>
+                    <div class="service-steps">
+                        <div class="service-step">
+                            <div class="service-step-number">1</div>
+                            <div class="service-step-content">Definición de criterios de cualificación y scoring</div>
+                        </div>
+                        <div class="service-step">
+                            <div class="service-step-number">2</div>
+                            <div class="service-step-content">Configuración de formularios inteligentes y chatbots</div>
+                        </div>
+                        <div class="service-step">
+                            <div class="service-step-number">3</div>
+                            <div class="service-step-content">Integración con CRM y automatización de asignación de owners</div>
+                        </div>
+                    </div>
+                    <div class="service-impact">
+                        <h4>Impacto medible:</h4>
+                        <p>• +35% conversiones<br>• -50% tiempo de respuesta<br>• +20% pipeline ventas</p>
+                    </div>
+                    <a href="#contacto" class="btn btn-outline" style="margin-top: 1rem;">Ver demo de esta solución</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sectores -->
+    <section class="section" id="sectores">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sectores</h2>
+                <p>Soluciones adaptadas a las necesidades específicas de tu industria</p>
+            </div>
+            <div class="sectors-grid">
+                <div class="sector-card">
+                    <div class="sector-icon">
+                        <i class="fas fa-clinic-medical"></i>
+                    </div>
+                    <h3>Salud</h3>
+                    <p>Clínicas dentales y estéticas: reducción de no-shows, recordatorios, consentimiento informado.</p>
+                    <div class="sector-kpis">
+                        <div class="sector-kpi">
                             <i class="fas fa-check-circle"></i>
-                            <div>
-                                <strong>Beneficio:</strong> Siempre con la última tecnología y sin costos imprevistos
-                            </div>
+                            <span>-32% coste soporte</span>
+                        </div>
+                        <div class="sector-kpi">
+                            <i class="fas fa-check-circle"></i>
+                            <span>+27% demos cerradas</span>
+                        </div>
+                        <div class="sector-kpi">
+                            <i class="fas fa-check-circle"></i>
+                            <span>98% satisfacción paciente</span>
                         </div>
                     </div>
                 </div>
-                <div class="service-card">
-                    <div class="pricing-badge">PAGO ÚNICO</div>
-                    <div class="service-icon">
-                        <i class="fas fa-brain"></i>
+                <div class="sector-card">
+                    <div class="sector-icon">
+                        <i class="fas fa-utensils"></i>
                     </div>
-                    <h3>Integración de IA</h3>
-                    <p>Desarrollamos sistemas inteligentes que aprenden de tus datos para predecir tendencias y tomar decisiones basadas en información en tiempo real.</p>
-                    <div class="pricing-details">
-                        <div class="pricing-option">
+                    <h3>Restauración</h3>
+                    <p>Reservas, upselling de menús, gestión de reseñas y atención al cliente 24/7.</p>
+                    <div class="sector-kpis">
+                        <div class="sector-kpi">
                             <i class="fas fa-check-circle"></i>
-                            <div>
-                                <strong>Pago único:</strong> Desarrollo completo del sistema de IA
-                            </div>
+                            <span>-40% coste soporte</span>
                         </div>
-                        <div class="pricing-option">
+                        <div class="sector-kpi">
                             <i class="fas fa-check-circle"></i>
-                            <div>
-                                <strong>Sin suscripción:</strong> Propiedad total del sistema
-                            </div>
+                            <span>+25% ventas adicionales</span>
                         </div>
-                        <div class="pricing-option">
+                        <div class="sector-kpi">
                             <i class="fas fa-check-circle"></i>
-                            <div>
-                                <strong>Soporte básico:</strong> 3 meses incluidos, luego opcional
-                            </div>
+                            <span>24/7 disponibilidad</span>
                         </div>
                     </div>
                 </div>
-                <div class="service-card">
-                    <div class="pricing-badge">FLEXIBLE</div>
-                    <div class="service-icon">
-                        <i class="fas fa-lightbulb"></i>
+                <div class="sector-card">
+                    <div class="sector-icon">
+                        <i class="fas fa-plane"></i>
                     </div>
-                    <h3>Consultoría Estratégica</h3>
-                    <p>Nuestros expertos analizan tus procesos y diseñan una hoja de ruta tecnológica para maximizar la eficiencia y preparar tu empresa para el futuro digital.</p>
-                    <div class="pricing-details">
-                        <div class="pricing-option">
+                    <h3>Turismo</h3>
+                    <p>Respuesta a consultas, upgrades, check-in automatizado y gestión de reseñas.</p>
+                    <div class="sector-kpis">
+                        <div class="sector-kpi">
                             <i class="fas fa-check-circle"></i>
-                            <div>
-                                <strong>Por proyecto:</strong> Análisis completo y plan de acción
-                            </div>
+                            <span>-35% coste soporte</span>
                         </div>
-                        <div class="pricing-option">
+                        <div class="sector-kpi">
                             <i class="fas fa-check-circle"></i>
-                            <div>
-                                <strong>Por horas:</strong> Asesoría puntual según necesidades
-                            </div>
+                            <span>+30% conversiones</span>
                         </div>
-                        <div class="pricing-option">
+                        <div class="sector-kpi">
                             <i class="fas fa-check-circle"></i>
-                            <div>
-                                <strong>Retainer mensual:</strong> Soporte continuo para decisiones estratégicas
-                            </div>
+                            <span>24/7 disponibilidad</span>
                         </div>
+                    </div>
+                </div>
+                <div class="sector-card">
+                    <div class="sector-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Inmobiliaria</h3>
+                    <p>Cualificación de compradores, agenda de visitas, follow-up y gestión de leads.</p>
+                    <div class="sector-kpis">
+                        <div class="sector-kpi">
+                            <i class="fas fa-check-circle"></i>
+                            <span>-30% coste soporte</span>
+                        </div>
+                        <div class="sector-kpi">
+                            <i class="fas fa-check-circle"></i>
+                            <span>+40% pipeline ventas</span>
+                        </div>
+                        <div class="sector-kpi">
+                            <i class="fas fa-check-circle"></i>
+                            <span>95% satisfacción cliente</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sector-card">
+                    <div class="sector-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Educación</h3>
+                    <p>Leads de matrícula, orientación y becas, seguimiento de prospectos y automatización de comunicaciones.</p>
+                    <div class="sector-kpis">
+                        <div class="sector-kpi">
+                            <i class="fas fa-check-circle"></i>
+                            <span>-45% coste soporte</span>
+                        </div>
+                        <div class="sector-kpi">
+                            <i class="fas fa-check-circle"></i>
+                            <span>+35% conversiones</span>
+                        </div>
+                        <div class="sector-kpi">
+                            <i class="fas fa-check-circle"></i>
+                            <span>24/7 disponibilidad</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Casos de Éxito -->
+    <section class="section testimonials" id="casos">
+        <div class="container">
+            <div class="section-title">
+                <h2>Casos de Éxito</h2>
+                <p>Historias reales de empresas que ya confían en Emporium AI</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Como clínica dental, necesitábamos reducir los no-shows y mejorar la atención al paciente. El asistente de IA de Emporium AI nos ayudó a reducir los costes de soporte en un 32% y aumentar las demos cerradas en un 27%."</p>
+                    </div>
+                    <div class="client-info">
+                        <div class="client-avatar">MJ</div>
+                        <div class="client-details">
+                            <h4>María Jiménez</h4>
+                            <p>Directora de Operaciones, Clínica Dental Estética</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Como restaurante, queríamos automatizar las reservas y el upselling. Con Emporium AI, logramos reducir los costes de soporte en un 40% y aumentar las ventas adicionales en un 25% con nuestro bot de WhatsApp."</p>
+                    </div>
+                    <div class="client-info">
+                        <div class="client-avatar">CR</div>
+                        <div class="client-details">
+                            <h4>Carlos Rodríguez</h4>
+                            <p>Director, Restaurante Gourmet</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Como agencia inmobiliaria, necesitábamos cualificar leads y gestionar visitas. La solución de Emporium AI nos permitió aumentar nuestro pipeline de ventas en un 40% y reducir los costes de soporte en un 30%."</p>
+                    </div>
+                    <div class="client-info">
+                        <div class="client-avatar">AL</div>
+                        <div class="client-details">
+                            <h4>Ana López</h4>
+                            <p>Gerente General, Inmobiliaria Premium</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Precios -->
+    <section class="section" id="precios">
+        <div class="container">
+            <div class="section-title">
+                <h2>Precios</h2>
+                <p>Modelos simples y transparentes con ROI esperado de 3-5x en 3 meses</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Esencial</h3>
+                        <div class="pricing-price">Desde €999</div>
+                        <div class="pricing-period">Setup + €199/mes</div>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature"><i class="fas fa-check"></i> 1 proceso automatizado</div>
+                        <div class="feature"><i class="fas fa-check"></i> Integración básica con CRM</div>
+                        <div class="feature"><i class="fas fa-check"></i> Soporte técnico básico</div>
+                        <div class="feature"><i class="fas fa-check"></i> Reportes mensuales</div>
+                        <div class="feature"><i class="fas fa-check"></i> Garantía de ROI</div>
+                    </div>
+                    <a href="#contacto" class="btn btn-outline">Reservar demo</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Pro</h3>
+                        <div class="pricing-price">Desde €2,499</div>
+                        <div class="pricing-period">Setup + €499/mes</div>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature"><i class="fas fa-check"></i> Hasta 3 procesos automatizados</div>
+                        <div class="feature"><i class="fas fa-check"></i> Integración avanzada con CRM/ERP</div>
+                        <div class="feature"><i class="fas fa-check"></i> Soporte técnico prioritario</div>
+                        <div class="feature"><i class="fas fa-check"></i> Reportes detallados y KPIs</div>
+                        <div class="feature"><i class="fas fa-check"></i> Garantía de ROI + Piloto de 2 semanas</div>
+                    </div>
+                    <a href="#contacto" class="btn btn-primary">Reservar demo</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Enterprise</h3>
+                        <div class="pricing-price">Personalizado</div>
+                        <div class="pricing-period">Setup + Suscripción</div>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature"><i class="fas fa-check"></i> Procesos ilimitados</div>
+                        <div class="feature"><i class="fas fa-check"></i> Integración completa con todos tus sistemas</div>
+                        <div class="feature"><i class="fas fa-check"></i> Soporte técnico 24/7</div>
+                        <div class="feature"><i class="fas fa-check"></i> Dashboard personalizado</div>
+                        <div class="feature"><i class="fas fa-check"></i> Garantía de ROI + Piloto de 2 semanas</div>
+                    </div>
+                    <a href="#contacto" class="btn btn-outline">Contactar para presupuesto</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recursos -->
+    <section class="section" id="recursos">
+        <div class="container">
+            <div class="section-title">
+                <h2>Recursos</h2>
+                <p>Guías, webinars y descargables para entender cómo la IA puede transformar tu negocio</p>
+            </div>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 15 Oct 2025</span>
+                            <span><i class="far fa-user"></i> Equipo Emporium AI</span>
+                        </div>
+                        <h3>Guía práctica: Cómo elegir entre modelo híbrido o pago único</h3>
+                        <p>Comparativa detallada de ambos modelos con ejemplos reales y recomendaciones según tu perfil de empresa.</p>
+                        <a href="#" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.9rem;">Descargar guía</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 28 Sep 2025</span>
+                            <span><i class="far fa-user"></i> Dra. Elena Martínez</span>
+                        </div>
+                        <h3>Webinar: Automatización de reservas en clínicas dentales</h3>
+                        <p>Case study completo con métricas reales y demostración en vivo de cómo funciona nuestra solución.</p>
+                        <a href="#" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.9rem;">Ver webinar</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 10 Ago 2025</span>
+                            <span><i class="far fa-user"></i> Carlos Sánchez</span>
+                        </div>
+                        <h3>Checklist: Preparación para implementar IA en tu empresa</h3>
+                        <p>Lista de verificación con los 10 pasos esenciales para preparar tu empresa antes de implementar soluciones de IA.</p>
+                        <a href="#" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.9rem;">Descargar checklist</a>
                     </div>
                 </div>
             </div>
@@ -873,108 +1730,6 @@
                     <div class="stat-card">
                         <div class="stat-number">Startup</div>
                         <p>Mentalidad ágil</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Casos de Éxito -->
-    <section class="section testimonials" id="casos">
-        <div class="container">
-            <div class="section-title">
-                <h2>Casos de Éxito</h2>
-                <p>Historias reales de empresas que ya confían en Emporium AI</p>
-            </div>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"Como startup en crecimiento, necesitábamos automatizar sin comprometer nuestro flujo de caja. El modelo híbrido de Emporium AI fue perfecto: pagamos un desarrollo inicial razonable y luego una suscripción ajustada a nuestro presupuesto."</p>
-                    </div>
-                    <div class="client-info">
-                        <div class="client-avatar">MJ</div>
-                        <div class="client-details">
-                            <h4>María Jiménez</h4>
-                            <p>CEO, TechStart</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"Como empresa familiar con décadas de historia, queríamos modernizarnos sin depender de proveedores externos a largo plazo. El modelo de pago único de Emporium AI nos dio la independencia tecnológica que buscábamos."</p>
-                    </div>
-                    <div class="client-info">
-                        <div class="client-avatar">CR</div>
-                        <div class="client-details">
-                            <h4>Carlos Rodríguez</h4>
-                            <p>Director, Industrias Rodríguez</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"La consultoría estratégica de Emporium AI nos ayudó a priorizar nuestras inversiones en tecnología. Su enfoque práctico y sin tecnicismos innecesarios fue exactamente lo que necesitábamos como empresa no tecnológica."</p>
-                    </div>
-                    <div class="client-info">
-                        <div class="client-avatar">AL</div>
-                        <div class="client-details">
-                            <h4>Ana López</h4>
-                            <p>Gerente General, Retail Solutions</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog -->
-    <section class="section" id="blog">
-        <div class="container">
-            <div class="section-title">
-                <h2>Blog y Recursos</h2>
-                <p>Consejos, tendencias y análisis sobre automatización e IA para empresas</p>
-            </div>
-            <div class="blog-grid">
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <i class="fas fa-calculator"></i>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="far fa-calendar"></i> 15 Oct 2025</span>
-                            <span><i class="far fa-user"></i> Equipo Emporium AI</span>
-                        </div>
-                        <h3>Modelos de Precio en Automatización: ¿Híbrido o Pago Único?</h3>
-                        <p>Guía para elegir el modelo de pago que mejor se adapta a tu empresa y presupuesto.</p>
-                        <a href="#" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.9rem;">Leer más</a>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="far fa-calendar"></i> 28 Sep 2025</span>
-                            <span><i class="far fa-user"></i> Dra. Elena Martínez</span>
-                        </div>
-                        <h3>5 Señales de que tu Empresa Necesita Automatización YA</h3>
-                        <p>Aprende a identificar cuándo los procesos manuales están frenando tu crecimiento.</p>
-                        <a href="#" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.9rem;">Leer más</a>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="far fa-calendar"></i> 10 Ago 2025</span>
-                            <span><i class="far fa-user"></i> Carlos Sánchez</span>
-                        </div>
-                        <h3>ROI de la Automatización: Cómo Medir el Retorno de tu Inversión</h3>
-                        <p>Métodos prácticos para calcular y maximizar el retorno de tus proyectos de automatización.</p>
-                        <a href="#" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.9rem;">Leer más</a>
                     </div>
                 </div>
             </div>
@@ -1042,18 +1797,46 @@
                             <input type="tel" id="phone" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="service">Modelo de Interés</label>
-                            <select id="service" class="form-control" required>
-                                <option value="">Selecciona un modelo</option>
-                                <option value="hibrido">Modelo Híbrido (Pago + Suscripción)</option>
-                                <option value="unico">Pago Único sin Mantenimiento</option>
-                                <option value="consultoria">Consultoría Estratégica</option>
+                            <label for="company">Empresa</label>
+                            <input type="text" id="company" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="website">Sitio Web</label>
+                            <input type="url" id="website" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="sector">Sector</label>
+                            <select id="sector" class="form-control" required>
+                                <option value="">Selecciona un sector</option>
+                                <option value="salud">Salud</option>
+                                <option value="restauracion">Restauración</option>
+                                <option value="turismo">Turismo</option>
+                                <option value="inmobiliaria">Inmobiliaria</option>
+                                <option value="educacion">Educación</option>
                                 <option value="otros">Otros</option>
                             </select>
                         </div>
                         <div class="form-group">
+                            <label for="volume">Volumen mensual de consultas</label>
+                            <select id="volume" class="form-control" required>
+                                <option value="">Selecciona un rango</option>
+                                <option value="0-100">0-100</option>
+                                <option value="101-500">101-500</option>
+                                <option value="501-1000">501-1000</option>
+                                <option value="1000+">Más de 1000</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="crm">Sistema actual (CRM/ERP)</label>
+                            <input type="text" id="crm" class="form-control">
+                        </div>
+                        <div class="form-group">
                             <label for="message">Mensaje</label>
                             <textarea id="message" class="form-control" placeholder="Cuéntanos sobre tu empresa y tus necesidades..." required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="gdpr" required>
+                            <label for="gdpr" style="display: inline; margin-left: 5px; font-size: 0.9rem;">Acepto la <a href="#">política de privacidad</a> y el tratamiento de mis datos conforme al GDPR.</label>
                         </div>
                         <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Mensaje</button>
                     </form>
@@ -1082,9 +1865,9 @@
                 <div class="footer-links">
                     <h3>Servicios</h3>
                     <ul>
-                        <li><a href="#servicios">Automatización de Procesos</a></li>
-                        <li><a href="#servicios">Integración de IA</a></li>
-                        <li><a href="#servicios">Consultoría Estratégica</a></li>
+                        <li><a href="#soluciones">Automatización de Procesos</a></li>
+                        <li><a href="#soluciones">Integración de IA</a></li>
+                        <li><a href="#soluciones">Consultoría Estratégica</a></li>
                         <li><a href="#">Desarrollo Personalizado</a></li>
                         <li><a href="#">Soporte Técnico</a></li>
                     </ul>
@@ -1094,12 +1877,107 @@
                     <ul>
                         <li><a href="#nosotros">Sobre Nosotros</a></li>
                         <li><a href="#casos">Casos de Éxito</a></li>
-                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#recursos">Recursos</a></li>
                         <li><a href="#">Carreras</a></li>
                         <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h3>Recursos</h3>
+                    <h3>Legal</h3>
                     <ul>
-                        <li><a href="#">Guías y eBooks</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Contrato de Encargado del Tratamiento</a></li>
+                        <li><a href="#">Cookies</a></li>
+                        <li><a href="#">Seguridad</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Emporium AI. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Barra sticky inferior (móvil) -->
+    <div class="sticky-bar">
+        <a href="https://wa.me/34600000000" class="btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        <a href="#contacto" class="btn btn-primary">
+            Reservar Demo
+        </a>
+    </div>
+
+    <script>
+        // Mobile Navigation Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileToggle.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                
+                // Simple validation
+                if (name && email) {
+                    // In a real implementation, you would send this to a server
+                    alert('¡Gracias por contactarnos! Hemos recibido tu mensaje y nos pondremos en contacto contigo pronto para una consulta gratuita.');
+                    contactForm.reset();
+                } else {
+                    alert('Por favor completa todos los campos obligatorios.');
+                }
+            });
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.boxShadow = 'var(--shadow)';
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
