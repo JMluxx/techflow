@@ -1,830 +1,507 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Implementamos asistentes de IA que agendan, atienden y venden por ti. Cumplimos GDPR y medimos el ROI. Reserva una demo en 20 minutos.">
-    <meta name="keywords" content="automatización IA, agencia IA B2B, automatización de reservas, atención al cliente IA, captación de leads IA, Emporium AI, GDPR, IA para empresas">
-    <meta name="author" content="Emporium AI">
-    <meta property="og:title" content="Agencia de IA B2B para Automatizaciones | Emporium AI">
-    <meta property="og:description" content="Implementamos asistentes de IA que agendan, atienden y venden por ti. Cumplimos GDPR y medimos el ROI. Reserva una demo en 20 minutos.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://emporium-ai.netlify.app">
-    <meta property="og:image" content="https://emporium-ai.netlify.app/images/og-image.jpg">
-    <title>Agencia de IA B2B para Automatizaciones | Emporium AI</title>
-    <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Variables CSS */
-        :root {
-            --primary: #6366f1;
-            --primary-dark: #4f46e5;
-            --secondary: #1e293b;
-            --accent: #8b5cf6;
-            --light: #f8fafc;
-            --gray: #94a3b8;
-            --dark-gray: #64748b;
-            --success: #10b981;
-            --transition: all 0.3s ease;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --radius: 12px;
-            --container-padding: 2rem;
+    <meta name="theme-color" content="#0f172a">
+    <title>Emporium AI - Automatizaciones con IA para Empresas B2B</title>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@name": "Emporium AI",
+        "url": "https://emporiumai.com",
+        "logo": "https://emporiumai.com/logo.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "telephone": "+34 600 000 000",
+            "areaServed": "ES",
+            "availableLanguage": ["es","en"]
         }
-
-        /* Reset y base */
+    }
+    </script>
+    <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
+        :root {
+            --primary: #0f172a;
+            --primary-light: #1e293b;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --text-dark: #0f172a;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --border: #e2e8f0;
+            --success: #10b981;
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: var(--secondary);
-            background-color: var(--light);
+            color: var(--text-dark);
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4, h5 {
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
+        /* HEADER */
+        header {
+            position: sticky;
+            top: 0;
+            background: white;
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
 
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            position: relative;
-            padding-bottom: 1rem;
-            margin-bottom: 2.5rem;
-        }
-
-        h2:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 70px;
-            height: 4px;
-            background: var(--primary);
-            border-radius: 2px;
-        }
-
-        p {
-            margin-bottom: 1.5rem;
-            color: var(--dark-gray);
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--primary);
-            transition: var(--transition);
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        .container {
-            width: 100%;
+        .header-content {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 var(--container-padding);
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 32px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-align: center;
-            cursor: pointer;
-            transition: var(--transition);
-            border: none;
-            font-size: 1rem;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        .section {
-            padding: 5rem 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-title h2:after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        /* Header y navegación */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: var(--shadow);
-            backdrop-filter: blur(10px);
-        }
-
-        .navbar {
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.2rem var(--container-padding);
         }
 
         .logo {
-            display: flex;
-            align-items: center;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--secondary);
-        }
-
-        .logo i {
-            color: var(--primary);
-            margin-right: 10px;
-            font-size: 2rem;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin: 0 1rem;
-        }
-
-        .nav-links a {
-            font-weight: 500;
-            color: var(--secondary);
-            position: relative;
-        }
-
-        .nav-links a:after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover:after {
-            width: 100%;
-        }
-
-        .mobile-toggle {
-            display: none;
             font-size: 1.5rem;
-            cursor: pointer;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
         }
 
-        /* Hero Section */
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .cta-header {
+            background: var(--accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+            white-space: nowrap;
+        }
+
+        .cta-header:hover {
+            background: var(--accent-hover);
+        }
+
+        /* HERO */
         .hero {
-            padding: 10rem 0 6rem;
-            background: linear-gradient(135deg, #f0f7ff 0%, #eef4ff 100%);
-            position: relative;
-            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
         }
 
         .hero-content {
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-        }
-
-        .hero-text {
-            flex: 1;
-        }
-
-        .hero-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
-
-        .hero-image img {
-            max-width: 500px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .hero h1 {
-            color: var(--secondary);
-            margin-bottom: 1.5rem;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            font-weight: 800;
         }
 
-        .hero p {
-            font-size: 1.2rem;
+        .hero-subtitle {
+            font-size: 1.25rem;
             margin-bottom: 2rem;
-            color: var(--dark-gray);
+            opacity: 0.95;
+            color: #cbd5e1;
         }
 
-        .hero-btns {
+        .hero-ctas {
             display: flex;
             gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
-        /* Pruebas sociales */
-        .social-proof {
+        .cta-primary {
+            background: var(--accent);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .cta-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+        }
+
+        .cta-secondary {
             background: white;
-            padding: 2rem;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            margin-top: 2rem;
+            color: var(--primary);
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .cta-secondary:hover {
+            background: var(--bg-light);
+            transform: translateY(-2px);
+        }
+
+        /* SOCIAL PROOF */
+        .social-proof {
+            background: var(--bg-light);
+            padding: 3rem 2rem;
             text-align: center;
         }
 
-        .proof-stats {
-            display: flex;
-            justify-content: center;
+        .social-proof-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .social-proof p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .metric {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .metric-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .metric-label {
+            color: var(--text-light);
+            margin-top: 0.5rem;
+        }
+
+        /* SOLUCIONES */
+        .soluciones {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .soluciones h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--primary);
+        }
+
+        .soluciones-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .solucion-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .solucion-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .solucion-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .solucion-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .solucion-card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .solucion-card a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s;
+        }
+
+        .solucion-card a:hover {
+            gap: 0.75rem;
+        }
+
+        /* CASO DE ÉXITO */
+        .caso-exito {
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            margin: 5rem 0;
+        }
+
+        .caso-exito-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 3rem;
+            align-items: center;
+        }
+
+        .caso-exito h2 {
+            font-size: 2rem;
             margin-bottom: 1.5rem;
         }
 
-        .proof-stat {
-            text-align: center;
-        }
-
-        .proof-number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .proof-label {
-            font-size: 0.9rem;
-            color: var(--dark-gray);
-        }
-
-        /* Qué automatizamos */
-        .what-we-automate {
-            margin-top: 4rem;
-        }
-
-        .automate-grid {
+        .caso-exito-meta {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .automate-card {
-            background: white;
-            padding: 2rem;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            text-align: center;
-        }
-
-        .automate-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(99, 102, 241, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 1.5rem;
-            color: var(--primary);
-        }
-
-        .automate-card h3 {
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        /* Casos de uso por rol */
-        .use-cases {
-            margin-top: 4rem;
-        }
-
-        .use-cases-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .use-case-card {
-            background: white;
-            padding: 2rem;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-        }
-
-        .use-case-role {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-
-        .use-case-role i {
-            color: var(--primary);
-            margin-right: 10px;
-            font-size: 1.5rem;
-        }
-
-        .use-case-role h3 {
-            margin: 0;
-            font-size: 1.3rem;
-        }
-
-        /* Caso de éxito destacado */
-        .featured-case {
-            margin-top: 4rem;
-            background: linear-gradient(135deg, #eef4ff 0%, #f0f7ff 100%);
-            padding: 4rem 2rem;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-        }
-
-        .case-content {
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-        }
-
-        .case-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
-
-        .case-details {
-            flex: 1;
-        }
-
-        .case-stats {
-            display: flex;
+            grid-template-columns: 1fr 1fr;
             gap: 2rem;
             margin: 2rem 0;
         }
 
-        .case-stat {
-            background: white;
+        .resultado {
+            background: rgba(255,255,255,0.1);
             padding: 1.5rem;
-            border-radius: var(--radius);
-            text-align: center;
+            border-radius: 0.5rem;
+            border-left: 4px solid var(--success);
         }
 
-        .case-stat-number {
+        .resultado-numero {
             font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .case-stat-label {
-            font-size: 0.9rem;
-            color: var(--dark-gray);
-        }
-
-        /* Integraciones y compliance */
-        .integrations-compliance {
-            margin-top: 4rem;
-        }
-
-        .compliance-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .compliance-card {
-            background: white;
-            padding: 2rem;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            text-align: center;
-        }
-
-        .compliance-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(99, 102, 241, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 1.5rem;
-            color: var(--primary);
-        }
-
-        .compliance-card h3 {
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        /* CTA final */
-        .final-cta {
-            margin-top: 4rem;
-            text-align: center;
-            padding: 4rem 2rem;
-            background: white;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-        }
-
-        .final-cta h2 {
-            margin-bottom: 1rem;
-        }
-
-        .final-cta p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: var(--dark-gray);
-        }
-
-        .final-cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        /* FAQ */
-        .faq-section {
-            margin-top: 4rem;
-        }
-
-        .faq-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .faq-card {
-            background: white;
-            padding: 2rem;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-        }
-
-        .faq-question {
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--secondary);
-        }
-
-        .faq-answer {
-            color: var(--dark-gray);
-        }
-
-        /* Servicios */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .service-card {
-            background: white;
-            border-radius: var(--radius);
-            padding: 2.5rem;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            background: rgba(99, 102, 241, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 2rem;
-            color: var(--primary);
-        }
-
-        .service-card h3 {
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .service-steps {
-            margin-top: 1.5rem;
-            text-align: left;
-        }
-
-        .service-step {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-        }
-
-        .service-step-number {
-            background: var(--primary);
-            color: white;
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            margin-right: 10px;
-        }
-
-        .service-step-content {
-            flex: 1;
-        }
-
-        .service-impact {
-            background: rgba(99, 102, 241, 0.05);
-            padding: 1.5rem;
-            border-radius: var(--radius);
-            margin-top: 1.5rem;
-            text-align: left;
-        }
-
-        .service-impact h4 {
-            margin-bottom: 1rem;
-            color: var(--secondary);
-        }
-
-        /* Sectores */
-        .sectors-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .sector-card {
-            background: white;
-            border-radius: var(--radius);
-            padding: 2.5rem;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            text-align: center;
-        }
-
-        .sector-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .sector-icon {
-            width: 80px;
-            height: 80px;
-            background: rgba(99, 102, 241, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 2rem;
-            color: var(--primary);
-        }
-
-        .sector-card h3 {
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .sector-kpis {
-            background: rgba(99, 102, 241, 0.05);
-            padding: 1.5rem;
-            border-radius: var(--radius);
-            margin-top: 1.5rem;
-            text-align: left;
-        }
-
-        .sector-kpi {
-            display: flex;
-            align-items: center;
-            margin-bottom: 0.5rem;
-        }
-
-        .sector-kpi i {
+            font-weight: 800;
             color: var(--success);
-            margin-right: 10px;
         }
 
-        /* Sobre Nosotros */
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 3rem;
+        .resultado-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
         }
 
-        .about-text {
-            flex: 1;
+        /* SECTORES */
+        .sectores {
+            padding: 5rem 2rem;
+            background: var(--bg-light);
         }
 
-        .about-stats {
-            flex: 1;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
+        .sectores-content {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .stat-card {
-            background: white;
-            padding: 2rem;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
+        .sectores h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
             text-align: center;
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
             color: var(--primary);
-            margin-bottom: 0.5rem;
         }
 
-        /* Casos de Éxito */
-        .testimonials {
-            background: linear-gradient(135deg, #eef4ff 0%, #f0f7ff 100%);
-        }
-
-        .testimonial-grid {
+        .sectores-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .testimonial-card {
-            background: white;
-            padding: 2rem;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-        }
-
-        .testimonial-content {
-            margin-bottom: 1.5rem;
-            font-style: italic;
-            color: var(--dark-gray);
-        }
-
-        .client-info {
-            display: flex;
-            align-items: center;
-        }
-
-        .client-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            margin-right: 1rem;
-        }
-
-        .client-details h4 {
-            margin-bottom: 0.2rem;
-        }
-
-        .client-details p {
-            margin: 0;
-            font-size: 0.9rem;
-            color: var(--gray);
-        }
-
-        /* Blog */
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .blog-card {
-            background: white;
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-
-        .blog-image {
-            height: 200px;
-            background: linear-gradient(45deg, var(--primary), var(--accent));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
-        }
-
-        .blog-content {
-            padding: 1.5rem;
-        }
-
-        .blog-meta {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-            color: var(--gray);
-        }
-
-        .blog-content h3 {
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        /* Contacto */
-        .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .contact-item {
-            display: flex;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 1.5rem;
         }
 
-        .contact-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(99, 102, 241, 0.1);
-            border-radius: 50%;
+        .sector-tag {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .sector-tag:hover {
+            border-color: var(--accent);
+            background: var(--accent);
+            color: white;
+        }
+
+        .sector-tag-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .sector-tag-name {
+            font-weight: 600;
+        }
+
+        /* SEGURIDAD */
+        .seguridad {
+            background: white;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .seguridad-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .seguridad-item {
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
+            gap: 0.75rem;
+            color: var(--text-light);
+        }
+
+        .badge {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: var(--success);
+            color: white;
+            border-radius: 50%;
+            font-size: 0.75rem;
+            line-height: 1.5;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 5rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
             color: var(--primary);
         }
 
-        .contact-form {
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: var(--border);
+        }
+
+        .faq-answer {
+            padding: 1.5rem;
+            color: var(--text-light);
+            display: none;
             background: white;
-            padding: 2.5rem;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        /* FORMULARIO */
+        .demo-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 5rem 2rem;
+        }
+
+        .demo-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .demo-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .demo-section p {
+            text-align: center;
+            margin-bottom: 2rem;
+            opacity: 0.95;
         }
 
         .form-group {
@@ -834,1150 +511,379 @@
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            font-weight: 500;
+            font-weight: 600;
         }
 
-        .form-control {
+        .form-group input,
+        .form-group select {
             width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
-            font-family: 'Poppins', sans-serif;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 0.375rem;
             font-size: 1rem;
-            transition: var(--transition);
+            background: rgba(255,255,255,0.9);
         }
 
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        .form-group input::placeholder {
+            color: #94a3b8;
         }
 
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9rem;
         }
 
-        /* Footer */
+        .checkbox-group input {
+            width: auto;
+            margin: 0;
+        }
+
+        /* FOOTER */
         footer {
-            background: var(--secondary);
+            background: var(--primary);
             color: white;
-            padding: 4rem 0 2rem;
+            padding: 3rem 2rem;
+            text-align: center;
         }
 
         .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2.5rem;
-            margin-bottom: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .footer-logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
+        .footer-links {
             display: flex;
-            align-items: center;
-        }
-
-        .footer-logo i {
-            color: var(--accent);
-            margin-right: 10px;
-        }
-
-        .footer-links h3 {
-            color: white;
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.8rem;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
         }
 
         .footer-links a {
-            color: var(--gray);
-            transition: var(--transition);
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
         }
 
         .footer-links a:hover {
-            color: var(--accent);
-            padding-left: 5px;
+            opacity: 1;
         }
 
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            transition: var(--transition);
-        }
-
-        .social-links a:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        .copyright {
-            text-align: center;
+        .footer-legal {
+            opacity: 0.6;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
             padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--gray);
-            font-size: 0.9rem;
+            margin-top: 2rem;
         }
 
-        /* Barra sticky inferior (móvil) */
-        .sticky-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: white;
-            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
-            padding: 1rem;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            z-index: 1000;
-            display: none;
-        }
-
-        .sticky-bar a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            text-align: center;
-            cursor: pointer;
-            transition: var(--transition);
-            border: none;
-            font-size: 0.9rem;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .sticky-bar .btn-primary {
-            background: var(--primary);
-            color: white;
-        }
-
-        .sticky-bar .btn-whatsapp {
-            background: #25D366;
-            color: white;
-        }
-
-        /* Responsive */
-        @media (max-width: 992px) {
-            h1 {
-                font-size: 2.8rem;
-            }
-            
-            h2 {
-                font-size: 2.2rem;
-            }
-            
-            .hero-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .hero-btns {
-                justify-content: center;
-            }
-            
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .case-content {
-                flex-direction: column;
-            }
-            
-            .sticky-bar {
-                display: flex;
-            }
-        }
-
+        /* MOBILE */
         @media (max-width: 768px) {
-            .mobile-toggle {
-                display: block;
+            nav {
+                display: none;
             }
-            
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 70px);
-                background: white;
-                flex-direction: column;
-                align-items: center;
-                padding-top: 2rem;
-                transition: var(--transition);
-                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-            }
-            
-            .nav-links.active {
-                left: 0;
-            }
-            
-            .nav-links li {
-                margin: 1.5rem 0;
-            }
-            
-            .hero {
-                padding: 8rem 0 4rem;
-            }
-            
-            .section {
-                padding: 3rem 0;
-            }
-        }
 
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2.2rem;
+            .hero h1 {
+                font-size: 2rem;
             }
-            
-            h2 {
-                font-size: 1.8rem;
+
+            .hero-subtitle {
+                font-size: 1rem;
             }
-            
-            .hero-btns {
+
+            .hero-ctas {
                 flex-direction: column;
             }
-            
-            .btn {
+
+            .cta-primary, .cta-secondary {
                 width: 100%;
             }
-            
-            .proof-stats {
+
+            .caso-exito-content {
+                grid-template-columns: 1fr;
+            }
+
+            .metrics {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
                 flex-direction: column;
                 gap: 1rem;
-            }
-            
-            .final-cta-buttons {
-                flex-direction: column;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav class="navbar">
-            <a href="#" class="logo">
-                <i class="fas fa-brain"></i>
-                Emporium AI
-            </a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#soluciones">Soluciones</a></li>
-                <li><a href="#sectores">Sectores</a></li>
-                <li><a href="#casos">Casos de Éxito</a></li>
-                <li><a href="#precios">Precios</a></li>
-                <li><a href="#recursos">Recursos</a></li>
-                <li><a href="#nosotros">Sobre Nosotros</a></li>
-                <li><a href="#contacto" class="btn btn-primary">Reservar Demo</a></li>
-            </ul>
-            <div class="mobile-toggle" id="mobileToggle">
-                <i class="fas fa-bars"></i>
-            </div>
+
+<!-- HEADER -->
+<header>
+    <div class="header-content">
+        <a href="#" class="logo">Emporium<span>AI</span></a>
+        <nav>
+            <a href="#soluciones">Soluciones</a>
+            <a href="#sectores">Sectores</a>
+            <a href="#casos">Casos de éxito</a>
+            <a href="#faq">FAQ</a>
         </nav>
-    </header>
+        <a href="#demo" class="cta-header">Reservar demo</a>
+    </div>
+</header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="inicio">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>IA que agenda, atiende y vende por ti</h1>
-                    <p>Implementamos asistentes conectados a tu CRM para convertir más y gastar menos. Cumplimos GDPR, alojamos en la UE y medimos cada interacción.</p>
-                    <div class="hero-btns">
-                        <a href="#contacto" class="btn btn-primary">Reservar demo de 20 minutos</a>
-                        <a href="#casos" class="btn btn-outline">Ver casos de éxito</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div style="background: linear-gradient(45deg, var(--primary), var(--accent)); width: 400px; height: 400px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 8rem;">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                </div>
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>IA que agenda, atiende y vende por ti</h1>
+        <p class="hero-subtitle">Implementamos asistentes de IA conectados a tu CRM para convertir más y gastar menos. Resultados en 30 días.</p>
+        <div class="hero-ctas">
+            <a href="#demo" class="cta-primary">Reservar demo de 20 min</a>
+            <a href="#casos" class="cta-secondary">Ver casos de éxito</a>
+        </div>
+    </div>
+</section>
+
+<!-- PRUEBAS SOCIALES -->
+<section class="social-proof">
+    <div class="social-proof-content">
+        <p>Confianza de más de 150 empresas en España</p>
+        <div class="metrics">
+            <div class="metric">
+                <div class="metric-number">+45%</div>
+                <div class="metric-label">Aumento de conversión</div>
             </div>
-            
-            <!-- Pruebas sociales -->
-            <div class="social-proof">
-                <div class="proof-stats">
-                    <div class="proof-stat">
-                        <div class="proof-number">50+</div>
-                        <div class="proof-label">Empresas satisfechas</div>
-                    </div>
-                    <div class="proof-stat">
-                        <div class="proof-number">98%</div>
-                        <div class="proof-label">Tasa de éxito en proyectos</div>
-                    </div>
-                    <div class="proof-stat">
-                        <div class="proof-number">40%</div>
-                        <div class="proof-label">Reducción promedio de costes operativos</div>
-                    </div>
-                    <div class="proof-stat">
-                        <div class="proof-number">GDPR</div>
-                        <div class="proof-label">Cumplimiento garantizado</div>
-                    </div>
-                </div>
+            <div class="metric">
+                <div class="metric-number">-60%</div>
+                <div class="metric-label">Reducción de costes</div>
+            </div>
+            <div class="metric">
+                <div class="metric-number">24/7</div>
+                <div class="metric-label">Atención automatizada</div>
+            </div>
+            <div class="metric">
+                <div class="metric-number">3 meses</div>
+                <div class="metric-label">ROI esperado</div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Qué automatizamos -->
-    <section class="section what-we-automate">
-        <div class="container">
-            <div class="section-title">
-                <h2>Qué automatizamos</h2>
-                <p>Soluciones de IA aplicadas a tareas repetitivas que generan valor inmediato</p>
+<!-- SOLUCIONES -->
+<section id="soluciones" class="soluciones">
+    <h2>Qué automatizamos</h2>
+    <div class="soluciones-grid">
+        <div class="solucion-card">
+            <div class="solucion-icon">📅</div>
+            <h3>Automatización de reservas</h3>
+            <p>Asistentes que agendan, reprograman y confirman citas vía WhatsApp, email o calendario automáticamente.</p>
+            <a href="#demo">Ver demo →</a>
+        </div>
+        <div class="solucion-card">
+            <div class="solucion-icon">💬</div>
+            <h3>Atención al cliente 24/7</h3>
+            <p>Respuestas automáticas sobre tu base de conocimiento con ticketing inteligente y escalado a humanos.</p>
+            <a href="#demo">Ver demo →</a>
+        </div>
+        <div class="solucion-card">
+            <div class="solucion-icon">🎯</div>
+            <h3>Captación y cualificación de leads</h3>
+            <p>Formularios y WhatsApp con scoring automático. Leads enriquecidos en tu CRM con owner asignado.</p>
+            <a href="#demo">Ver demo →</a>
+        </div>
+        <div class="solucion-card">
+            <div class="solucion-icon">⚙️</div>
+            <h3>Back-office y operaciones</h3>
+            <p>Extracción de datos, conciliación, avisos internos automáticos y resúmenes de operaciones.</p>
+            <a href="#demo">Ver demo →</a>
+        </div>
+    </div>
+</section>
+
+<!-- CASO DE ÉXITO -->
+<section id="casos" class="caso-exito">
+    <div class="caso-exito-content">
+        <div>
+            <h2>Clínica Dental Moderna: De lo vemos y te llamo a demos confirmadas</h2>
+            <p>Una clínica con 800 llamadas/mes perdía leads por no contestar a tiempo. Implementamos un bot que atiende, cualifica y agenda en < 1 minuto.</p>
+            <div class="caso-exito-meta">
+                <div class="resultado">
+                    <div class="resultado-numero">-32%</div>
+                    <div class="resultado-label">Reducción coste soporte</div>
+                </div>
+                <div class="resultado">
+                    <div class="resultado-numero">+55%</div>
+                    <div class="resultado-label">Demos confirmadas</div>
+                </div>
+                <div class="resultado">
+                    <div class="resultado-numero">2 sem</div>
+                    <div class="resultado-label">Tiempo implementación</div>
+                </div>
+                <div class="resultado">
+                    <div class="resultado-numero">3x</div>
+                    <div class="resultado-label">ROI en 90 días</div>
+                </div>
             </div>
-            <div class="automate-grid">
-                <div class="automate-card">
-                    <div class="automate-icon">
-                        <i class="fas fa-calendar-check"></i>
-                    </div>
-                    <h3>Automatización de reservas</h3>
-                    <p>Asistentes que agendan, reprograman y confirman citas vía WhatsApp, email o calendario.</p>
-                </div>
-                <div class="automate-card">
-                    <div class="automate-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>Atención al cliente 24/7</h3>
-                    <p>Respuestas inteligentes basadas en tu base de conocimiento + ticketing automático.</p>
-                </div>
-                <div class="automate-card">
-                    <div class="automate-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Captación y cualificación de leads</h3>
-                    <p>Formularios y WhatsApp + scoring + envío a CRM con owner asignado.</p>
-                </div>
-                <div class="automate-card">
-                    <div class="automate-icon">
-                        <i class="fas fa-tasks"></i>
-                    </div>
-                    <h3>Back-office y operaciones</h3>
-                    <p>Extracción de datos de PDFs, conciliación, avisos internos, resúmenes automáticos.</p>
-                </div>
+            <p style="font-size: 0.95rem; margin-top: 1.5rem; font-style: italic;">"En la primera semana ya recibíamos leads categorizados en nuestro CRM. No podemos vivir sin esto."</p>
+            <p style="font-size: 0.85rem; opacity: 0.8;">— Carlos Ruiz, Director Operaciones</p>
+        </div>
+        <div style="background: rgba(255,255,255,0.1); border-radius: 0.75rem; padding: 2rem; text-align: center; height: 300px; display: flex; align-items: center; justify-content: center;">
+            <p style="font-size: 3rem;">📱💬✅</p>
+        </div>
+    </div>
+</section>
+
+<!-- SECTORES -->
+<section id="sectores" class="sectores">
+    <div class="sectores-content">
+        <h2>Especializados en tu sector</h2>
+        <div class="sectores-grid">
+            <div class="sector-tag">
+                <div class="sector-tag-icon">🏥</div>
+                <div class="sector-tag-name">Salud</div>
+            </div>
+            <div class="sector-tag">
+                <div class="sector-tag-icon">🍽️</div>
+                <div class="sector-tag-name">Restauración</div>
+            </div>
+            <div class="sector-tag">
+                <div class="sector-tag-icon">✈️</div>
+                <div class="sector-tag-name">Turismo</div>
+            </div>
+            <div class="sector-tag">
+                <div class="sector-tag-icon">🏠</div>
+                <div class="sector-tag-name">Inmobiliaria</div>
+            </div>
+            <div class="sector-tag">
+                <div class="sector-tag-icon">📚</div>
+                <div class="sector-tag-name">Educación</div>
+            </div>
+            <div class="sector-tag">
+                <div class="sector-tag-icon">🛍️</div>
+                <div class="sector-tag-name">Retail</div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Casos de uso por rol -->
-    <section class="section use-cases">
-        <div class="container">
-            <div class="section-title">
-                <h2>Casos de uso por rol</h2>
-                <p>Como beneficia a cada departamento de tu empresa</p>
-            </div>
-            <div class="use-cases-grid">
-                <div class="use-case-card">
-                    <div class="use-case-role">
-                        <i class="fas fa-cogs"></i>
-                        <h3>Operaciones</h3>
-                    </div>
-                    <p>Reduce no-shows, optimiza recursos y mejora la trazabilidad de procesos con automatización de reservas y gestión de citas.</p>
-                </div>
-                <div class="use-case-card">
-                    <div class="use-case-role">
-                        <i class="fas fa-chart-line"></i>
-                        <h3>Marketing</h3>
-                    </div>
-                    <p>Convierte más leads con bots de cualificación, personaliza campañas y mide el ROI de cada canal de adquisición.</p>
-                </div>
-                <div class="use-case-card">
-                    <div class="use-case-role">
-                        <i class="fas fa-handshake"></i>
-                        <h3>Ventas</h3>
-                    </div>
-                    <p>Agenda reuniones automáticamente, sigue leads sin esfuerzo y aumenta el pipeline con calificación inteligente.</p>
-                </div>
-            </div>
+<!-- SEGURIDAD -->
+<section class="seguridad">
+    <div class="seguridad-content">
+        <div class="seguridad-item">
+            <span class="badge">✓</span>
+            <span><strong>Alojado en la UE</strong></span>
         </div>
-    </section>
-
-    <!-- Caso de éxito destacado -->
-    <section class="section featured-case">
-        <div class="container">
-            <div class="case-content">
-                <div class="case-image">
-                    <div style="background: linear-gradient(45deg, var(--primary), var(--accent)); width: 300px; height: 300px; border-radius: var(--radius); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
-                        <i class="fas fa-clinic-medical"></i>
-                    </div>
-                </div>
-                <div class="case-details">
-                    <h2>Clínica Dental Estética: Reducción del 32% en costes de soporte</h2>
-                    <p>Implementamos un asistente de IA que gestiona todas las reservas, recordatorios y consultas de pacientes, liberando tiempo para el equipo humano.</p>
-                    <div class="case-stats">
-                        <div class="case-stat">
-                            <div class="case-stat-number">-32%</div>
-                            <div class="case-stat-label">Coste soporte</div>
-                        </div>
-                        <div class="case-stat">
-                            <div class="case-stat-number">+27%</div>
-                            <div class="case-stat-label">Demos cerradas</div>
-                        </div>
-                        <div class="case-stat">
-                            <div class="case-stat-number">98%</div>
-                            <div class="case-stat-label">Satisfacción paciente</div>
-                        </div>
-                    </div>
-                    <div class="client-info">
-                        <div class="client-avatar">MJ</div>
-                        <div class="client-details">
-                            <h4>María Jiménez</h4>
-                            <p>Directora de Operaciones, Clínica Dental Estética</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="seguridad-item">
+            <span class="badge">✓</span>
+            <span><strong>Cumplimos GDPR</strong></span>
         </div>
-    </section>
-
-    <!-- Integraciones y compliance -->
-    <section class="section integrations-compliance">
-        <div class="container">
-            <div class="section-title">
-                <h2>Integraciones y cumplimiento</h2>
-                <p>Trabajamos con tus sistemas actuales y cumplimos con las normativas más estrictas</p>
-            </div>
-            <div class="compliance-grid">
-                <div class="compliance-card">
-                    <div class="compliance-icon">
-                        <i class="fab fa-salesforce"></i>
-                    </div>
-                    <h3>Integraciones</h3>
-                    <p>Conectamos con tu CRM, ERP, WhatsApp Business, email y web para una experiencia fluida.</p>
-                </div>
-                <div class="compliance-card">
-                    <div class="compliance-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Seguridad</h3>
-                    <p>Alojamiento en servidores de la UE, cifrado end-to-end y backups diarios.</p>
-                </div>
-                <div class="compliance-card">
-                    <div class="compliance-icon">
-                        <i class="fas fa-gavel"></i>
-                    </div>
-                    <h3>GDPR</h3>
-                    <p>Cumplimos con el RGPD europeo y proporcionamos contrato de encargado del tratamiento.</p>
-                </div>
-                <div class="compliance-card">
-                    <div class="compliance-icon">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <h3>Métricas</h3>
-                    <p>Medimos cada interacción y te entregamos reportes mensuales con ROI y KPIs clave.</p>
-                </div>
-            </div>
+        <div class="seguridad-item">
+            <span class="badge">✓</span>
+            <span><strong>Single-Tenant</strong></span>
         </div>
-    </section>
-
-    <!-- CTA final -->
-    <section class="section final-cta">
-        <div class="container">
-            <h2>¿Listo para empezar con un piloto de 2 semanas?</h2>
-            <p>Te ofrecemos un diagnóstico gratuito de automatización con plan en 48 horas. Si no ves resultados, no seguimos.</p>
-            <div class="final-cta-buttons">
-                <a href="#contacto" class="btn btn-primary">Reservar demo gratuita</a>
-                <a href="#" class="btn btn-outline">Descargar diagnóstico gratuito</a>
-            </div>
+        <div class="seguridad-item">
+            <span class="badge">✓</span>
+            <span><strong>Encriptación end-to-end</strong></span>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- FAQ -->
-    <section class="section faq-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Preguntas frecuentes</h2>
-                <p>Respuestas a las objeciones más comunes</p>
-            </div>
-            <div class="faq-grid">
-                <div class="faq-card">
-                    <div class="faq-question">¿Cumplen GDPR? ¿Dónde se alojan los datos?</div>
-                    <div class="faq-answer">Sí, cumplimos con el GDPR europeo. Todos nuestros servidores están ubicados en la UE y ofrecemos contrato de encargado del tratamiento bajo solicitud.</div>
-                </div>
-                <div class="faq-card">
-                    <div class="faq-question">¿Qué pasa si mi CRM es X?</div>
-                    <div class="faq-answer">Nos integramos con cualquier CRM mediante APIs o herramientas de automatización como Zapier, Make o n8n. Si no hay integración directa, la desarrollamos.</div>
-                </div>
-                <div class="faq-card">
-                    <div class="faq-question">¿Cuánto tardo en ver resultados?</div>
-                    <div class="faq-answer">En 2 semanas tienes un piloto funcional. Los resultados completos se ven en 30-60 días, dependiendo de la complejidad del proceso.</div>
-                </div>
-                <div class="faq-card">
-                    <div class="faq-question">¿Se puede empezar con un piloto barato?</div>
-                    <div class="faq-answer">¡Claro! Ofrecemos pilotos desde 999€ que incluyen análisis, desarrollo e implementación de un proceso específico. Sin compromisos.</div>
-                </div>
-            </div>
+<!-- FAQ -->
+<section id="faq" class="faq">
+    <h2>Preguntas frecuentes</h2>
+    
+    <div class="faq-item active">
+        <div class="faq-question">
+            <span>¿Dónde se alojan mis datos?</span>
+            <span class="faq-toggle">▼</span>
         </div>
-    </section>
-
-    <!-- Soluciones -->
-    <section class="section" id="soluciones">
-        <div class="container">
-            <div class="section-title">
-                <h2>Nuestras Soluciones</h2>
-                <p>Automatizaciones específicas para resolver tus dolores más urgentes</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-calendar-check"></i>
-                    </div>
-                    <h3>Automatización de reservas</h3>
-                    <p>Asistentes que agendan, reprograman y confirman citas vía WhatsApp, email o calendario.</p>
-                    <div class="service-steps">
-                        <div class="service-step">
-                            <div class="service-step-number">1</div>
-                            <div class="service-step-content">Análisis de tu proceso actual y definición de flujos</div>
-                        </div>
-                        <div class="service-step">
-                            <div class="service-step-number">2</div>
-                            <div class="service-step-content">Desarrollo del asistente con tu branding y tono de voz</div>
-                        </div>
-                        <div class="service-step">
-                            <div class="service-step-number">3</div>
-                            <div class="service-step-content">Integración con tu CRM y pruebas de funcionamiento</div>
-                        </div>
-                    </div>
-                    <div class="service-impact">
-                        <h4>Impacto medible:</h4>
-                        <p>• -32% coste soporte<br>• +27% demos cerradas<br>• 98% satisfacción cliente</p>
-                    </div>
-                    <a href="#contacto" class="btn btn-outline" style="margin-top: 1rem;">Ver demo de esta solución</a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>Atención al cliente 24/7</h3>
-                    <p>Respuestas inteligentes basadas en tu base de conocimiento + ticketing automático.</p>
-                    <div class="service-steps">
-                        <div class="service-step">
-                            <div class="service-step-number">1</div>
-                            <div class="service-step-content">Importación de tu base de conocimiento y definición de respuestas</div>
-                        </div>
-                        <div class="service-step">
-                            <div class="service-step-number">2</div>
-                            <div class="service-step-content">Configuración de RAG (Retrieval-Augmented Generation)</div>
-                        </div>
-                        <div class="service-step">
-                            <div class="service-step-number">3</div>
-                            <div class="service-step-content">Integración con canales de comunicación y sistema de tickets</div>
-                        </div>
-                    </div>
-                    <div class="service-impact">
-                        <h4>Impacto medible:</h4>
-                        <p>• -40% coste soporte<br>• +50% resolución primera vez<br>• 24/7 disponibilidad</p>
-                    </div>
-                    <a href="#contacto" class="btn btn-outline" style="margin-top: 1rem;">Ver demo de esta solución</a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Captación y cualificación de leads</h3>
-                    <p>Formularios y WhatsApp + scoring + envío a CRM con owner asignado.</p>
-                    <div class="service-steps">
-                        <div class="service-step">
-                            <div class="service-step-number">1</div>
-                            <div class="service-step-content">Definición de criterios de cualificación y scoring</div>
-                        </div>
-                        <div class="service-step">
-                            <div class="service-step-number">2</div>
-                            <div class="service-step-content">Configuración de formularios inteligentes y chatbots</div>
-                        </div>
-                        <div class="service-step">
-                            <div class="service-step-number">3</div>
-                            <div class="service-step-content">Integración con CRM y automatización de asignación de owners</div>
-                        </div>
-                    </div>
-                    <div class="service-impact">
-                        <h4>Impacto medible:</h4>
-                        <p>• +35% conversiones<br>• -50% tiempo de respuesta<br>• +20% pipeline ventas</p>
-                    </div>
-                    <a href="#contacto" class="btn btn-outline" style="margin-top: 1rem;">Ver demo de esta solución</a>
-                </div>
-            </div>
+        <div class="faq-answer">
+            Todos tus datos se alojan en servidores en la Unión Europea. Cumplimos GDPR y ofrecemos infraestructura Single-Tenant (datos separados de otros clientes). Disponemos de encriptación en tránsito y en reposo.
         </div>
-    </section>
-
-    <!-- Sectores -->
-    <section class="section" id="sectores">
-        <div class="container">
-            <div class="section-title">
-                <h2>Sectores</h2>
-                <p>Soluciones adaptadas a las necesidades específicas de tu industria</p>
-            </div>
-            <div class="sectors-grid">
-                <div class="sector-card">
-                    <div class="sector-icon">
-                        <i class="fas fa-clinic-medical"></i>
-                    </div>
-                    <h3>Salud</h3>
-                    <p>Clínicas dentales y estéticas: reducción de no-shows, recordatorios, consentimiento informado.</p>
-                    <div class="sector-kpis">
-                        <div class="sector-kpi">
-                            <i class="fas fa-check-circle"></i>
-                            <span>-32% coste soporte</span>
-                        </div>
-                        <div class="sector-kpi">
-                            <i class="fas fa-check-circle"></i>
-                            <span>+27% demos cerradas</span>
-                        </div>
-                        <div class="sector-kpi">
-                            <i class="fas fa-check-circle"></i>
-                            <span>98% satisfacción paciente</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="sector-card">
-                    <div class="sector-icon">
-                        <i class="fas fa-utensils"></i>
-                    </div>
-                    <h3>Restauración</h3>
-                    <p>Reservas, upselling de menús, gestión de reseñas y atención al cliente 24/7.</p>
-                    <div class="sector-kpis">
-                        <div class="sector-kpi">
-                            <i class="fas fa-check-circle"></i>
-                            <span>-40% coste soporte</span>
-                        </div>
-                        <div class="sector-kpi">
-                            <i class="fas fa-check-circle"></i>
-                            <span>+25% ventas adicionales</span>
-                        </div>
-                        <div class="sector-kpi">
-                            <i class="fas fa-check-circle"></i>
-                            <span>24/7 disponibilidad</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="sector-card">
-                    <div class="sector-icon">
-                        <i class="fas fa-plane"></i>
-                    </div>
-                    <h3>Turismo</h3>
-                    <p>Respuesta a consultas, upgrades, check-in automatizado y gestión de reseñas.</p>
-                    <div class="sector-kpis">
-                        <div class="sector-kpi">
-                            <i class="fas fa-check-circle"></i>
-                            <span>-35% coste soporte</span>
-                        </div>
-                        <div class="sector-kpi">
-                            <i class="fas fa-check-circle"></i>
-                            <span>+30% conversiones</span>
-                        </div>
-                        <div class="sector-kpi">
-                            <i class="fas fa-check-circle"></i>
-                            <span>24/7 disponibilidad</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="sector-card">
-                    <div class="sector-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3>Inmobiliaria</h3>
-                    <p>Cualificación de compradores, agenda de visitas, follow-up y gestión de leads.</p>
-                    <div class="sector-kpis">
-                        <div class="sector-kpi">
-                            <i class="fas fa-check-circle"></i>
-                            <span>-30% coste soporte</span>
-                        </div>
-                        <div class="sector-kpi">
-                            <i class="fas fa-check-circle"></i>
-                            <span>+40% pipeline ventas</span>
-                        </div>
-                        <div class="sector-kpi">
-                            <i class="fas fa-check-circle"></i>
-                            <span>95% satisfacción cliente</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="sector-card">
-                    <div class="sector-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>Educación</h3>
-                    <p>Leads de matrícula, orientación y becas, seguimiento de prospectos y automatización de comunicaciones.</p>
-                    <div class="sector-kpis">
-                        <div class="sector-kpi">
-                            <i class="fas fa-check-circle"></i>
-                            <span>-45% coste soporte</span>
-                        </div>
-                        <div class="sector-kpi">
-                            <i class="fas fa-check-circle"></i>
-                            <span>+35% conversiones</span>
-                        </div>
-                        <div class="sector-kpi">
-                            <i class="fas fa-check-circle"></i>
-                            <span>24/7 disponibilidad</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Casos de Éxito -->
-    <section class="section testimonials" id="casos">
-        <div class="container">
-            <div class="section-title">
-                <h2>Casos de Éxito</h2>
-                <p>Historias reales de empresas que ya confían en Emporium AI</p>
-            </div>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"Como clínica dental, necesitábamos reducir los no-shows y mejorar la atención al paciente. El asistente de IA de Emporium AI nos ayudó a reducir los costes de soporte en un 32% y aumentar las demos cerradas en un 27%."</p>
-                    </div>
-                    <div class="client-info">
-                        <div class="client-avatar">MJ</div>
-                        <div class="client-details">
-                            <h4>María Jiménez</h4>
-                            <p>Directora de Operaciones, Clínica Dental Estética</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"Como restaurante, queríamos automatizar las reservas y el upselling. Con Emporium AI, logramos reducir los costes de soporte en un 40% y aumentar las ventas adicionales en un 25% con nuestro bot de WhatsApp."</p>
-                    </div>
-                    <div class="client-info">
-                        <div class="client-avatar">CR</div>
-                        <div class="client-details">
-                            <h4>Carlos Rodríguez</h4>
-                            <p>Director, Restaurante Gourmet</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"Como agencia inmobiliaria, necesitábamos cualificar leads y gestionar visitas. La solución de Emporium AI nos permitió aumentar nuestro pipeline de ventas en un 40% y reducir los costes de soporte en un 30%."</p>
-                    </div>
-                    <div class="client-info">
-                        <div class="client-avatar">AL</div>
-                        <div class="client-details">
-                            <h4>Ana López</h4>
-                            <p>Gerente General, Inmobiliaria Premium</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Precios -->
-    <section class="section" id="precios">
-        <div class="container">
-            <div class="section-title">
-                <h2>Precios</h2>
-                <p>Modelos simples y transparentes con ROI esperado de 3-5x en 3 meses</p>
-            </div>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>Esencial</h3>
-                        <div class="pricing-price">Desde €999</div>
-                        <div class="pricing-period">Setup + €199/mes</div>
-                    </div>
-                    <div class="pricing-features">
-                        <div class="feature"><i class="fas fa-check"></i> 1 proceso automatizado</div>
-                        <div class="feature"><i class="fas fa-check"></i> Integración básica con CRM</div>
-                        <div class="feature"><i class="fas fa-check"></i> Soporte técnico básico</div>
-                        <div class="feature"><i class="fas fa-check"></i> Reportes mensuales</div>
-                        <div class="feature"><i class="fas fa-check"></i> Garantía de ROI</div>
-                    </div>
-                    <a href="#contacto" class="btn btn-outline">Reservar demo</a>
-                </div>
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>Pro</h3>
-                        <div class="pricing-price">Desde €2,499</div>
-                        <div class="pricing-period">Setup + €499/mes</div>
-                    </div>
-                    <div class="pricing-features">
-                        <div class="feature"><i class="fas fa-check"></i> Hasta 3 procesos automatizados</div>
-                        <div class="feature"><i class="fas fa-check"></i> Integración avanzada con CRM/ERP</div>
-                        <div class="feature"><i class="fas fa-check"></i> Soporte técnico prioritario</div>
-                        <div class="feature"><i class="fas fa-check"></i> Reportes detallados y KPIs</div>
-                        <div class="feature"><i class="fas fa-check"></i> Garantía de ROI + Piloto de 2 semanas</div>
-                    </div>
-                    <a href="#contacto" class="btn btn-primary">Reservar demo</a>
-                </div>
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>Enterprise</h3>
-                        <div class="pricing-price">Personalizado</div>
-                        <div class="pricing-period">Setup + Suscripción</div>
-                    </div>
-                    <div class="pricing-features">
-                        <div class="feature"><i class="fas fa-check"></i> Procesos ilimitados</div>
-                        <div class="feature"><i class="fas fa-check"></i> Integración completa con todos tus sistemas</div>
-                        <div class="feature"><i class="fas fa-check"></i> Soporte técnico 24/7</div>
-                        <div class="feature"><i class="fas fa-check"></i> Dashboard personalizado</div>
-                        <div class="feature"><i class="fas fa-check"></i> Garantía de ROI + Piloto de 2 semanas</div>
-                    </div>
-                    <a href="#contacto" class="btn btn-outline">Contactar para presupuesto</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Recursos -->
-    <section class="section" id="recursos">
-        <div class="container">
-            <div class="section-title">
-                <h2>Recursos</h2>
-                <p>Guías, webinars y descargables para entender cómo la IA puede transformar tu negocio</p>
-            </div>
-            <div class="blog-grid">
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="far fa-calendar"></i> 15 Oct 2025</span>
-                            <span><i class="far fa-user"></i> Equipo Emporium AI</span>
-                        </div>
-                        <h3>Guía práctica: Cómo elegir entre modelo híbrido o pago único</h3>
-                        <p>Comparativa detallada de ambos modelos con ejemplos reales y recomendaciones según tu perfil de empresa.</p>
-                        <a href="#" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.9rem;">Descargar guía</a>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <i class="fas fa-video"></i>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="far fa-calendar"></i> 28 Sep 2025</span>
-                            <span><i class="far fa-user"></i> Dra. Elena Martínez</span>
-                        </div>
-                        <h3>Webinar: Automatización de reservas en clínicas dentales</h3>
-                        <p>Case study completo con métricas reales y demostración en vivo de cómo funciona nuestra solución.</p>
-                        <a href="#" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.9rem;">Ver webinar</a>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <i class="fas fa-download"></i>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="far fa-calendar"></i> 10 Ago 2025</span>
-                            <span><i class="far fa-user"></i> Carlos Sánchez</span>
-                        </div>
-                        <h3>Checklist: Preparación para implementar IA en tu empresa</h3>
-                        <p>Lista de verificación con los 10 pasos esenciales para preparar tu empresa antes de implementar soluciones de IA.</p>
-                        <a href="#" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.9rem;">Descargar checklist</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sobre Nosotros -->
-    <section class="section" id="nosotros">
-        <div class="container">
-            <div class="section-title">
-                <h2>Sobre Nosotros</h2>
-                <p>Una nueva generación de soluciones tecnológicas para empresas innovadoras</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>En Emporium AI, somos una empresa recién lanzada con una misión clara: democratizar el acceso a la automatización e inteligencia artificial para empresas de todos los tamaños. Creemos que la tecnología debe ser accesible, transparente y adaptada a las necesidades reales de cada negocio.</p>
-                    <p>Nuestro equipo está formado por expertos apasionados por la innovación que han trabajado en proyectos de vanguardia en Silicon Valley y Europa. Nos unimos para crear una alternativa fresca y flexible a los modelos tradicionales de consultoría tecnológica.</p>
-                    <p>No somos una empresa más del sector: somos un colectivo de visionarios que quiere marcar la diferencia ofreciendo soluciones prácticas con modelos de precios que se adaptan a tu realidad financiera.</p>
-                </div>
-                <div class="about-stats">
-                    <div class="stat-card">
-                        <div class="stat-number">100%</div>
-                        <p>Enfoque en resultados</p>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">24h</div>
-                        <p>Respuesta a consultas</p>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">Flexible</div>
-                        <p>Modelos de pago</p>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">Startup</div>
-                        <p>Mentalidad ágil</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contacto -->
-    <section class="section" id="contacto">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contáctanos</h2>
-                <p>¿Listo para transformar tu negocio con soluciones de automatización e IA? Escríbenos y uno de nuestros expertos te contactará para una consulta gratuita.</p>
-            </div>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <h3>Dirección</h3>
-                            <p>Calle Innovación 42, Distrito Tecnológico<br>Madrid, España</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div>
-                            <h3>Teléfono</h3>
-                            <p>+34 912 345 678</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h3>Email</h3>
-                            <p>hola@emporium-ai.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div>
-                            <h3>Horario</h3>
-                            <p>Lunes a Viernes: 9:00 - 18:00</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Nombre Completo</label>
-                            <input type="text" id="name" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Teléfono</label>
-                            <input type="tel" id="phone" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="company">Empresa</label>
-                            <input type="text" id="company" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="website">Sitio Web</label>
-                            <input type="url" id="website" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="sector">Sector</label>
-                            <select id="sector" class="form-control" required>
-                                <option value="">Selecciona un sector</option>
-                                <option value="salud">Salud</option>
-                                <option value="restauracion">Restauración</option>
-                                <option value="turismo">Turismo</option>
-                                <option value="inmobiliaria">Inmobiliaria</option>
-                                <option value="educacion">Educación</option>
-                                <option value="otros">Otros</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="volume">Volumen mensual de consultas</label>
-                            <select id="volume" class="form-control" required>
-                                <option value="">Selecciona un rango</option>
-                                <option value="0-100">0-100</option>
-                                <option value="101-500">101-500</option>
-                                <option value="501-1000">501-1000</option>
-                                <option value="1000+">Más de 1000</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="crm">Sistema actual (CRM/ERP)</label>
-                            <input type="text" id="crm" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Mensaje</label>
-                            <textarea id="message" class="form-control" placeholder="Cuéntanos sobre tu empresa y tus necesidades..." required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <input type="checkbox" id="gdpr" required>
-                            <label for="gdpr" style="display: inline; margin-left: 5px; font-size: 0.9rem;">Acepto la <a href="#">política de privacidad</a> y el tratamiento de mis datos conforme al GDPR.</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Mensaje</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <div class="footer-logo">
-                        <i class="fas fa-brain"></i>
-                        Emporium AI
-                    </div>
-                    <p>Soluciones de automatización e inteligencia artificial con modelos de precio flexibles para empresas que buscan innovar sin comprometer su flujo de caja.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <h3>Servicios</h3>
-                    <ul>
-                        <li><a href="#soluciones">Automatización de Procesos</a></li>
-                        <li><a href="#soluciones">Integración de IA</a></li>
-                        <li><a href="#soluciones">Consultoría Estratégica</a></li>
-                        <li><a href="#">Desarrollo Personalizado</a></li>
-                        <li><a href="#">Soporte Técnico</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h3>Empresa</h3>
-                    <ul>
-                        <li><a href="#nosotros">Sobre Nosotros</a></li>
-                        <li><a href="#casos">Casos de Éxito</a></li>
-                        <li><a href="#recursos">Recursos</a></li>
-                        <li><a href="#">Carreras</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h3>Legal</h3>
-                    <ul>
-                        <li><a href="#">Política de Privacidad</a></li>
-                        <li><a href="#">Términos y Condiciones</a></li>
-                        <li><a href="#">Contrato de Encargado del Tratamiento</a></li>
-                        <li><a href="#">Cookies</a></li>
-                        <li><a href="#">Seguridad</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2025 Emporium AI. Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Barra sticky inferior (móvil) -->
-    <div class="sticky-bar">
-        <a href="https://wa.me/34600000000" class="btn-whatsapp">
-            <i class="fab fa-whatsapp"></i> WhatsApp
-        </a>
-        <a href="#contacto" class="btn btn-primary">
-            Reservar Demo
-        </a>
     </div>
 
-    <script>
-        // Mobile Navigation Toggle
-        const mobileToggle = document.getElementById('mobileToggle');
-        const navLinks = document.getElementById('navLinks');
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>¿Cuánto tardo en ver resultados?</span>
+            <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+            Típicamente, el piloto dura 2 semanas. Ves resultados en 30 días (leads categorizados, reservas automáticas, reducciones de coste). El ROI se materializa entre 90-120 días. Ofrecemos garantía de piloto: si no hay mejora, no seguimos.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>¿Funciona con mi CRM?</span>
+            <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+            Integramos con HubSpot, Salesforce, Pipedrive, Zoho y la mayoría de CRM vía API. Si usas un sistema personalizado, también lo soportamos. En la demo evaluamos tu stack actual.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>¿Qué necesito tener preparado?</span>
+            <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+            Una base de conocimiento (procedimientos, FAQs) y acceso a tu CRM + calendario. No es obligatorio tenerlo 100% pulido: nosotros te ayudamos a estructurarlo en el discovery.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>¿Se puede empezar con un piloto barato?</span>
+            <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+            Sí. El piloto de 2 semanas es de bajo coste. Incluye 1 caso de uso (ej: automatización de reservas). Si funciona, escalamos. Sin compromiso de contrato largo.
+        </div>
+    </div>
+</section>
+
+<!-- FORMULARIO DEMO -->
+<section id="demo" class="demo-section">
+    <div class="demo-content">
+        <h2>Reservar demo de 20 minutos</h2>
+        <p>Descubre cómo tu empresa puede ahorrar 40% en costes operativos y convertir más.</p>
         
-        mobileToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileToggle.innerHTML = navLinks.classList.contains('active') ? 
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        });
-        
-        // Form submission
-        const contactForm = document.getElementById('contactForm');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Get form values
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                
-                // Simple validation
-                if (name && email) {
-                    // In a real implementation, you would send this to a server
-                    alert('¡Gracias por contactarnos! Hemos recibido tu mensaje y nos pondremos en contacto contigo pronto para una consulta gratuita.');
-                    contactForm.reset();
-                } else {
-                    alert('Por favor completa todos los campos obligatorios.');
-                }
-            });
-        }
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-            } else {
-                header.style.boxShadow = 'var(--shadow)';
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-            }
-        });
-    </script>
-</body>
-</html>
+        <form onsubmit="handleSubmit(event)">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+            </div>
+
+            <div class="form-group">
+                <label for="empresa">Empresa</label>
+                <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" required>
+            </div>
+
+            <div class="form-group">
+                <label for="sector">Sector</label>
+                <select id="sector" name="sector" required>
+                    <option value="">Selecciona tu sector</option>
+                    <option value="salud">Salud</option>
+                    <option value="restauracion">Restauración</option>
+                    <option value="turismo">Turismo</option>
+                    <option value="inmobiliaria">Inmobiliaria</option>
+                    <option value="educacion">Educación</option>
+                    <option value="retail">Retail</option>
+                    <option value="otros">Otros</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="tu@empresa.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000">
+            </div>
+
+            <div class="form-group">
+                <label for="consultas">¿Cuántas consultas
