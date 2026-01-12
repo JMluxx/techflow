@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Agencia de IA B2B que automatiza reservas, atención al cliente y captación de leads para pymes. Cumplimos GDPR y alojamos en la UE. Solicita información sin compromiso.">
+    <meta name="description" content="Agencia de IA B2B que automatiza reservas, atención al cliente y captación de leads para pymes. Cumplimos GDPR y alojamos en la UE. Reserva una demo en 20 minutos.">
     <meta name="keywords" content="automatización IA, agencia IA B2B, automatización reservas, atención al cliente IA, captación leads IA, Emporium IA, GDPR, IA para pymes">
     <meta name="author" content="Emporium IA">
     <meta property="og:title" content="Agencia de IA B2B para Automatizaciones | Emporium IA">
@@ -12,7 +12,7 @@
     <meta property="og:url" content="https://emporium-ia.netlify.app">
     <title>Agencia de IA B2B para Automatizaciones | Emporium IA</title>
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+    <link rel="icon" href="image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
@@ -404,6 +404,9 @@
             font-size: 1.2rem;
             margin-bottom: 2rem;
             color: var(--dark-gray);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .final-cta-buttons {
@@ -799,29 +802,6 @@
         .footer-links a:hover {
             color: var(--accent);
             padding-left: 5px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            transition: var(--transition);
-        }
-
-        .social-links a:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
         }
 
         .copyright {
@@ -1493,15 +1473,6 @@
                 <div class="contact-info">
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <h3>Dirección</h3>
-                            <p>Calle Innovación 42, Distrito Tecnológico<br>Madrid, España</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
                             <i class="fas fa-phone"></i>
                         </div>
                         <div>
@@ -1515,7 +1486,7 @@
                         </div>
                         <div>
                             <h3>Email</h3>
-                            <p>hola@emporium-ia.com</p>
+                            <p>contacto@emporium-ia.es</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1552,7 +1523,7 @@
                         </div>
                         <div class="form-group">
                             <label for="sector">Sector</label>
-                            <select id="sector" class="form-control" required>
+                            <select id="sector" class="form-control">
                                 <option value="">Selecciona un sector</option>
                                 <option value="salud">Salud</option>
                                 <option value="restauracion">Restauración</option>
@@ -1564,7 +1535,7 @@
                         </div>
                         <div class="form-group">
                             <label for="volume">Volumen mensual de consultas</label>
-                            <select id="volume" class="form-control" required>
+                            <select id="volume" class="form-control">
                                 <option value="">Selecciona un rango</option>
                                 <option value="0-100">0-100</option>
                                 <option value="101-500">101-500</option>
@@ -1582,7 +1553,7 @@
                         </div>
                         <div class="form-group">
                             <input type="checkbox" id="gdpr" required>
-                            <label for="gdpr" style="display: inline; margin-left: 5px; font-size: 0.9rem;">Acepto la <a href="#">política de privacidad</a> y el tratamiento de mis datos conforme al GDPR.</label>
+                            <label for="gdpr" style="display: inline; margin-left: 5px; font-size: 0.9rem;">Acepto la <a href="politica-privacidad.html">política de privacidad</a> y el tratamiento de mis datos conforme al GDPR.</label>
                         </div>
                         <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Mensaje</button>
                     </form>
@@ -1601,12 +1572,6 @@
                         Emporium IA
                     </div>
                     <p>Soluciones de automatización e inteligencia artificial para pymes que buscan innovar sin comprometer su flujo de caja.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
                 </div>
                 <div class="footer-links">
                     <h3>Servicios</h3>
@@ -1614,8 +1579,7 @@
                         <li><a href="#soluciones">Automatización de Procesos</a></li>
                         <li><a href="#soluciones">Integración de IA</a></li>
                         <li><a href="#soluciones">Consultoría Estratégica</a></li>
-                        <li><a href="#">Desarrollo Personalizado</a></li>
-                        <li><a href="#">Soporte Técnico</a></li>
+                        <li><a href="#contacto">Desarrollo Personalizado</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
@@ -1623,18 +1587,17 @@
                     <ul>
                         <li><a href="#nosotros">Sobre Nosotros</a></li>
                         <li><a href="#recursos">Recursos</a></li>
-                        <li><a href="#">Carreras</a></li>
                         <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h3>Legal</h3>
                     <ul>
-                        <li><a href="#">Política de Privacidad</a></li>
-                        <li><a href="#">Términos y Condiciones</a></li>
-                        <li><a href="#">Contrato de Encargado del Tratamiento</a></li>
-                        <li><a href="#">Cookies</a></li>
-                        <li><a href="#">Seguridad</a></li>
+                        <li><a href="politica-privacidad.html" target="_blank">Política de Privacidad</a></li>
+                        <li><a href="terminos-condiciones.html" target="_blank">Términos y Condiciones</a></li>
+                        <li><a href="contrato-encargado-tratamiento.html" target="_blank">Contrato de Encargado del Tratamiento</a></li>
+                        <li><a href="cookies.html" target="_blank">Cookies</a></li>
+                        <li><a href="seguridad.html" target="_blank">Seguridad</a></li>
                     </ul>
                 </div>
             </div>
