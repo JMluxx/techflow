@@ -1382,7 +1382,7 @@
                     </div>
                     <h3>Guía: Primeros pasos en automatización para pymes</h3>
                     <p>Descubre qué procesos son candidatos ideales para automatizar y cómo priorizarlos según tu presupuesto.</p>
-                    <a href="#" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.9rem;">Descargar guía</a>
+                    <a href="/recursos/guia-primeros-pasos-automatizacion.pdf" class="btn btn-outline" download>Descargar guía</a>
                 </div>
                 <div class="resource-card">
                     <div class="resource-icon">
@@ -1390,7 +1390,7 @@
                     </div>
                     <h3>Checklist: Preparación para implementar IA</h3>
                     <p>Lista de verificación con los 10 pasos esenciales para preparar tu empresa antes de implementar soluciones de IA.</p>
-                    <a href="#" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.9rem;">Descargar checklist</a>
+                    <a href="/recursos/checklist-preparacion-ia.pdf" class="btn btn-outline" download>Descargar checklist</a>
                 </div>
                 <div class="resource-card">
                     <div class="resource-icon">
@@ -1398,7 +1398,7 @@
                     </div>
                     <h3>Calculadora de ROI de automatización</h3>
                     <p>Herramienta interactiva para estimar el ahorro y retorno de inversión de automatizar tus procesos repetitivos.</p>
-                    <a href="#" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.9rem;">Probar calculadora</a>
+                    <a href="/calculadora-roi.html" class="btn btn-outline">Probar calculadora</a>
                 </div>
             </div>
         </div>
@@ -1500,30 +1500,30 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="contactForm">
+                    <form action="https://formspree.io/f/mnjjqdvo" method="POST">
                         <div class="form-group">
                             <label for="name">Nombre Completo</label>
-                            <input type="text" id="name" class="form-control" required>
+                            <input type="text" id="name" name="name" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" class="form-control" required>
+                            <input type="email" id="email" name="email" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="phone">Teléfono</label>
-                            <input type="tel" id="phone" class="form-control">
+                            <input type="tel" id="phone" name="phone" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="company">Empresa</label>
-                            <input type="text" id="company" class="form-control" required>
+                            <input type="text" id="company" name="company" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="website">Sitio Web</label>
-                            <input type="url" id="website" class="form-control">
+                            <input type="url" id="website" name="website" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="sector">Sector</label>
-                            <select id="sector" class="form-control">
+                            <select id="sector" name="sector" class="form-control">
                                 <option value="">Selecciona un sector</option>
                                 <option value="salud">Salud</option>
                                 <option value="restauracion">Restauración</option>
@@ -1535,7 +1535,7 @@
                         </div>
                         <div class="form-group">
                             <label for="volume">Volumen mensual de consultas</label>
-                            <select id="volume" class="form-control">
+                            <select id="volume" name="volume" class="form-control">
                                 <option value="">Selecciona un rango</option>
                                 <option value="0-100">0-100</option>
                                 <option value="101-500">101-500</option>
@@ -1545,15 +1545,17 @@
                         </div>
                         <div class="form-group">
                             <label for="crm">Sistema actual (CRM/ERP)</label>
-                            <input type="text" id="crm" class="form-control">
+                            <input type="text" id="crm" name="crm" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="message">Mensaje</label>
-                            <textarea id="message" class="form-control" placeholder="Cuéntanos sobre tu empresa y tus necesidades..." required></textarea>
+                            <textarea id="message" name="message" class="form-control" placeholder="Cuéntanos sobre tu empresa y tus necesidades..." required></textarea>
                         </div>
                         <div class="form-group">
-                            <input type="checkbox" id="gdpr" required>
-                            <label for="gdpr" style="display: inline; margin-left: 5px; font-size: 0.9rem;">Acepto la <a href="politica-privacidad.html">política de privacidad</a> y el tratamiento de mis datos conforme al GDPR.</label>
+                            <input type="checkbox" id="gdpr" name="gdpr" required>
+                            <label for="gdpr" style="display: inline; margin-left: 5px; font-size: 0.9rem;">
+                                Acepto la <a href="politica-privacidad.html" target="_blank">política de privacidad</a> y el tratamiento de mis datos conforme al GDPR.
+                            </label>
                         </div>
                         <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Mensaje</button>
                     </form>
@@ -1635,26 +1637,6 @@
                 mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
             });
         });
-        
-        // Form submission
-        const contactForm = document.getElementById('contactForm');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Get form values
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                
-                // Simple validation
-                if (name && email) {
-                    alert('¡Gracias por contactarnos! Hemos recibido tu mensaje y nos pondremos en contacto contigo pronto.');
-                    contactForm.reset();
-                } else {
-                    alert('Por favor completa todos los campos obligatorios.');
-                }
-            });
-        }
         
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
